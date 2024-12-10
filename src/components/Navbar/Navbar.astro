@@ -1,0 +1,17 @@
+---
+import MobileNavbar from "@components/Navbar/components/mobileNavbar/MobileNavbar.astro";
+import DesktopNavbar from "@components/Navbar/components/desktopNavbar/DesktopNavbar.astro";
+import MobileResponsiveNavbarButtons from "./components/mobileNavbar/MobileResponsiveNavbarButtons.astro";
+---
+
+<nav
+  class="navbar-area"
+  role="navigation"
+  aria-label="Navegación principal"
+  itemscope
+  itemtype="https://schema.org/SiteNavigationElement"
+>
+  <MobileNavbar />
+  <DesktopNavbar />
+  <MobileResponsiveNavbarButtons />
+</nav>
