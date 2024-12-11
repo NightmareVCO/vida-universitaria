@@ -50,9 +50,7 @@
 		autoplay: true,
 		effect: 'fade',
 		notification: 'false', 
-		fadeEffect: {
-		crossFade: true,
-		},
+		smartSpeed: 8000,
 		navigation: {
 			nextEl: '.home-slider-container .swiper-btn-next',
 			prevEl: '.home-slider-container .swiper-btn-prev',
@@ -76,7 +74,7 @@
         dots: true,
         thumbs: false,
         autoplay: true,
-        smartSpeed: 1000,
+        smartSpeed: 8000,
         autoplayHoverPause: true,
 		navText: [
             '<i class="fa-solid fa-arrow-left"></i>', 
@@ -93,7 +91,7 @@
                 items:3,
             },
             1200:{
-                items:3,
+                items:5,
             },
                 
         }

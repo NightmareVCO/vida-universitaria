@@ -1226,54 +1226,21 @@ Search Style
 Banner Area  Style
 ======================================================*/
 .main-slider {
-  padding-right: 40px;
-  padding-left: 40px;
   position: relative;
-  background-color: #186CAF;
+}
+.main-slider .even-slider {
+  background-image: url(../images/banner-even.png);
+}
+.main-slider .odd-slider {
+  background-image: url(../images/banner-odd.png);
 }
 .main-slider .swiper-slide {
-  background-image: url(../images/banners/banner-1.webp);
-  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 10px;
   padding-bottom: 0px;
   padding-top: 0px;
   position: relative;
-  height: 900px;
-}
-.main-slider .swiper-slide::before {
-  content: "";
-  position: absolute;
-  background: linear-gradient(9087deg, rgba(17, 29, 94, 0.9584208683) 43%, rgba(17, 29, 94, 0.762342437) 72%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 100%);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.main-slider .swiper-slide::after {
-  content: "";
-  position: absolute;
-  background: rgba(227, 40, 69, 0.5);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-.main-slider .banner-bg-1 {
-  background-image: url(../images/banners/banner-16.webp);
-  z-index: 9;
-}
-.main-slider .banner-bg-1 .banner-image {
-  opacity: 1;
-}
-.main-slider .banner-bg-2 {
-  background-image: url(../images/banners/banner-15.webp);
-}
-.main-slider .banner-bg-2 .banner-image {
-  opacity: 1;
+  height: 600px;
 }
 .main-slider .swiper-wrapper {
   overflow: hidden;
@@ -1334,26 +1301,26 @@ Banner Area  Style
   margin-right: 0px;
   position: relative;
   max-width: 900px;
-  padding-top: 250px;
-  padding-left: 15px;
+  padding-top: 100px;
+  padding-left: 60px;
   z-index: 2;
 }
 .banner-content h1 {
   font-weight: 700;
-  font-size: 72px;
+  font-size: 40px;
   letter-spacing: 4px;
   color: #ffffff;
   margin-bottom: 15px;
   font-family: "Roboto", sans-serif;
-  line-height: 90px;
+  line-height: 40px;
   margin-bottom: 30px;
   text-transform: capitalize;
-  padding-right: 15px;
+  padding-right: 100px;
 }
 .banner-content p {
   font-weight: 600;
   font-size: 16px;
-  color: #00ca99;
+  color: #ffffff;
   margin-bottom: 50px;
   max-width: 590px;
 }
@@ -1371,20 +1338,22 @@ Banner Area  Style
 }
 
 .banner-image {
-  padding-top: 100px;
+  padding-top: 60px;
+  max-width: 1100px;
   text-align: right;
-  max-width: 1520px;
   position: absolute;
   right: 0;
   left: 0;
-  bottom: 0;
+  bottom: 1;
   margin: auto;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   z-index: 1;
 }
 .banner-image img {
-  width: 650px;
+  width: 400px;
+  height: 400px;
+  border-radius: 40px;
 }
 
 /*
@@ -1866,10 +1835,11 @@ Latest News Area Style
   overflow: hidden;
 }
 .single-news-card .news-img img {
+  margin-top: 20px;
   transition: all ease 0.5s;
 }
 .single-news-card .news-content {
-  padding: 30px;
+  padding: 10px 25px;
 }
 .single-news-card .news-content .list {
   margin-bottom: 15px;
@@ -1898,6 +1868,51 @@ Latest News Area Style
 }
 .single-news-card .news-content h3:hover {
   color: #DDB622;
+}
+.single-news-card .tags-and-share {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e3e3e3;
+  margin-bottom: 30px;
+}
+.single-news-card .tags-and-share .tags ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.single-news-card .tags-and-share .tags ul li {
+  margin-right: 10px;
+  display: inline-block;
+}
+.single-news-card .tags-and-share .tags ul li span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #186CAF;
+  margin-right: 5px;
+}
+.single-news-card .tags-and-share .tags ul li a {
+  color: #186CAF;
+  transition: all ease 0.5s;
+  position: relative;
+}
+.single-news-card .tags-and-share .share {
+  text-align: center;
+}
+.single-news-card .tags-and-share .share ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.single-news-card .tags-and-share .share ul li {
+  display: inline-block;
+}
+.single-news-card .tags-and-share .share ul li a {
+  height: 35px;
+  width: 35px;
+  line-height: 38px;
+  border-radius: 100%;
+  background-color: #f3f3f3;
+  color: #186CAF;
+  display: inline-block;
+  text-align: center;
+  transition: all ease 0.5s;
 }
 
 /*
@@ -1975,7 +1990,7 @@ Start Footer Area Style
 Start Copyright Area Style
 ======================================================*/
 .copyright-area {
-  background-color: #1f2c75;
+  background-color: #005DA9;
 }
 
 .copyright {
@@ -2333,8 +2348,8 @@ Start Courses Pages Style
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .page-banner-area::before {
   position: absolute;
@@ -2343,7 +2358,7 @@ Start Courses Pages Style
   width: 100%;
   left: 0;
   top: 0;
-  background: rgba(17, 29, 94, 0.8);
+  background: #01588E;
 }
 .page-banner-area.bg-1 {
   background-image: url(../images/banners/inner-page-banner-1.jpg);
@@ -3468,7 +3483,7 @@ Start Blog Details Style
   position: relative;
 }
 .news-details .tags-and-share .share {
-  text-align: right;
+  text-align: center;
 }
 .news-details .tags-and-share .share ul {
   padding-left: 0;

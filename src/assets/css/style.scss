@@ -65,7 +65,8 @@ $color_2: #01588E;
 $color_4: #DDB622; //active, links, buttons
 $color_5: #1b2336;
 $color_6: #00ca99;
-$color_8: #1f2c75;
+$color_8: #005DA9;
+$color_9: #0E4F90;
 
 $border-color: #e3e3e3;
 $body-color: #f3f3f3;
@@ -1479,60 +1480,23 @@ Search Style
 Banner Area  Style
 ======================================================*/
 .main-slider {
-	padding-right: 40px;
-	padding-left: 40px;
 	position: relative;
-	background-color: $color_1;
+
+	.even-slider {
+		background-image: url(../images/banner-even.png);
+	}
+
+	.odd-slider {
+		background-image: url(../images/banner-odd.png);
+	}
 
 	.swiper-slide {
-		background-image: url(../images/banners/banner-1.webp);
-		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		border-radius: 10px;
 		padding-bottom: 0px;
 		padding-top: 0px;
 		position: relative;
-		height: 900px;
-
-		&::before {
-			content: "";
-			position: absolute;
-			background: linear-gradient(9087deg, rgba(17, 29, 94, 0.958420868347339) 43%, rgba(17, 29, 94, 0.76234243697479) 72%, rgba(255, 255, 255, 0) 100%, rgba(255, 255, 255, 0) 100%);
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 1;
-		}
-
-		&::after {
-			content: "";
-			position: absolute;
-			background: rgba(227, 40, 69, .5);
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-		}
-	}
-
-	.banner-bg-1 {
-		background-image: url(../images/banners/banner-16.webp);
-		z-index: 9;
-
-		.banner-image {
-			opacity: 1;
-		}
-	}
-
-	.banner-bg-2 {
-		background-image: url(../images/banners/banner-15.webp);
-
-		.banner-image {
-			opacity: 1;
-		}
+		height: 600px;
 	}
 
 	.swiper-wrapper {
@@ -1603,27 +1567,27 @@ Banner Area  Style
 	margin-right: 0px;
 	position: relative;
 	max-width: 900px;
-	padding-top: 250px;
-	padding-left: 15px;
+	padding-top: 100px;
+	padding-left: 60px;
 	z-index: 2;
 
 	h1 {
 		font-weight: 700;
-		font-size: 72px;
+		font-size: 40px;
 		letter-spacing: 4px;
 		color: $white;
 		margin-bottom: 15px;
 		font-family: $font-family_1;
-		line-height: 90px;
+		line-height: 40px;
 		margin-bottom: 30px;
 		text-transform: capitalize;
-		padding-right: 15px;
+		padding-right: 100px;
 	}
 
 	p {
 		font-weight: 600;
 		font-size: 16px;
-		color: $color_6;
+		color: $white;
 		margin-bottom: 50px;
 		max-width: 590px;
 	}
@@ -1645,20 +1609,22 @@ Banner Area  Style
 }
 
 .banner-image {
-	padding-top: 100px;
+	padding-top: 60px;
+	max-width: 1100px;
 	text-align: right;
-	max-width: 1520px;
 	position: absolute;
 	right: 0;
 	left: 0;
-	bottom: 0;
+	bottom: 1;
 	margin: auto;
 	padding-right: calc(var(--bs-gutter-x) * 0.5);
 	padding-left: calc(var(--bs-gutter-x) * 0.5);
 	z-index: 1;
 
 	img {
-		width: 650px;
+		width: 400px;
+		height: 400px;
+		border-radius: 40px;
 	}
 }
 
@@ -2228,12 +2194,13 @@ Latest News Area Style
 		overflow: hidden;
 
 		img {
+			margin-top: 20px;
 			transition: all ease 0.5s;
 		}
 	}
 
 	.news-content {
-		padding: 30px;
+		padding: 10px 25px;
 
 		.list {
 			margin-bottom: 15px;
@@ -2267,6 +2234,62 @@ Latest News Area Style
 
 			&:hover {
 				color: $color_4;
+			}
+		}
+	}
+
+	.tags-and-share {
+		padding-bottom: 25px;
+		border-bottom: 1px solid $border-color;
+		margin-bottom: 30px;
+
+		.tags {
+			ul {
+				padding-left: 0;
+				margin-bottom: 0;
+
+				li {
+					margin-right: 10px;
+					display: inline-block;
+
+					span {
+						font-size: 18px;
+						font-weight: 500;
+						color: $color_1;
+						margin-right: 5px;
+					}
+
+					a {
+						color: $color-1;
+						transition: all ease 0.5s;
+						position: relative;
+					}
+				}
+			}
+		}
+
+		.share {
+			text-align: center;
+
+			ul {
+				padding-left: 0;
+				margin-bottom: 0;
+
+				li {
+					display: inline-block;
+
+					a {
+						height: 35px;
+						width: 35px;
+						line-height: 38px;
+						border-radius: 100%;
+						background-color: $body-color;
+						color: $color_1;
+						display: inline-block;
+						text-align: center;
+						transition: all ease 0.5s;
+					}
+				}
 			}
 		}
 	}
@@ -2807,8 +2830,8 @@ Start Courses Pages Style
 	background-position: center center;
 	background-repeat: no-repeat;
 	position: relative;
-	padding-top: 150px;
-	padding-bottom: 150px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 
 	&::before {
 		position: absolute;
@@ -2817,7 +2840,7 @@ Start Courses Pages Style
 		width: 100%;
 		left: 0;
 		top: 0;
-		background: rgba(17, 29, 94, 0.8);
+		background: $color_2;
 	}
 
 	&.bg-1 {
@@ -4156,7 +4179,7 @@ Start Blog Details Style
 			}
 		}
 		.share {
-			text-align: right;
+			text-align: center;
 			ul {
 				padding-left: 0;
 				margin-bottom: 0;
