@@ -1,0 +1,26 @@
+---
+import Banner from "@components/Banner/Banner.astro";
+import StudentGroupRender from "@components/Cards/StudentGroup/StudentGroupRender/StudentGroupRender.astro";
+import Layout from "@layouts/Layout.astro";
+
+const res = await fetch(
+  "https://public-api.wordpress.com/wp/v2/sites/vidauniversitaria49.wordpress.com/posts?tag&category"
+);
+const posts = await res.json();
+const resCategory = await fetch(
+  "https://public-api.wordpress.com/wp/v2/sites/vidauniversitaria49.wordpress.com/categories"
+);
+const categories = await resCategory.json();
+console.log(categories);
+---
+
+<Layout title="Asociaciones, Clubes y Comités | Vida Universitaria">
+  <Banner
+    title="Asociaciones, Clubes y Comités"
+    path="Asociaciones, Clubes y Comités"
+    origin="Grupos Estudiantiles"
+    originLink="/grupos-estudiantiles"
+  />
+
+  <StudentGroupRender />
+</Layout>

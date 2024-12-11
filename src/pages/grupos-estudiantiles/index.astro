@@ -1,0 +1,21 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const res = await fetch("https://public-api.wordpress.com/wp/v2/sites/vidauniversitaria49.wordpress.com/posts?tag&category");
+const posts = await res.json();
+const resCategory = await fetch("https://public-api.wordpress.com/wp/v2/sites/vidauniversitaria49.wordpress.com/categories");
+const categories = await resCategory.json();
+console.log(categories);
+---
+
+<Layout>
+    <h1>Astro + WordPress 🚀</h1>
+    {
+      posts.map((post: any) => (
+          <h2 set:html={post.title.rendered} />
+          <p>{post.date}</p>
+          <p>{categories.find((category: any) => category.id === post.categories[0]).name}</p>
+          <p set:html={post.content.rendered} />
+      ))
+    }
+</Layout>
