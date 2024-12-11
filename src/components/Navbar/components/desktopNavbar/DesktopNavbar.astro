@@ -1,13 +1,20 @@
 ---
-import { navigationData } from "@data/navData";
+import { navigationData } from "@data/nav.data";
 import NavbarMenuItems from "./NavbarMenuItems";
+import { Image } from "astro:assets";
 ---
 
 <nav class="desktop-nav">
   <div class="container-fluid">
     <nav class="navbar navbar-expand-md navbar-light">
-      <a class="navbar-brand" href="index.html">
-        <img src="src/assets/images/logo.webp" class="main-logo" alt="logo" />
+      <a class="navbar-brand" href="/">
+        <Image
+          src="/src/assets/images/logo.webp"
+          class="main-logo"
+          alt="logo"
+          width={200}
+          height={50}
+        />
       </a>
 
       <div

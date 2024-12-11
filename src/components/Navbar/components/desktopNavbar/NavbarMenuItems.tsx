@@ -1,4 +1,4 @@
-import  { type NavItem } from "@data/navData";
+import  { type NavItem } from "@data/nav.data";
 
 type NavbarMenuItemsProps = {
   items: NavItem[];
