@@ -1827,12 +1827,18 @@ Latest News Area Style
 ======================================================*/
 .single-news-card {
   margin-bottom: 30px;
-  transition: all ease 0.5s;
   background-color: #ffffff;
-  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.15);
+  transition: all ease-in-out 0.5s;
+  margin-top: 0;
+  border-radius: 15px;
+}
+.single-news-card:hover {
+  margin-top: -10px;
 }
 .single-news-card .news-img {
   overflow: hidden;
+  max-height: 300px;
 }
 .single-news-card .news-img img {
   margin-top: 20px;
@@ -1919,7 +1925,7 @@ Latest News Area Style
 Start Footer Area Style
 ======================================================*/
 .footer-area {
-  background-color: #186CAF;
+  background-color: #01588E;
   position: relative;
   z-index: 1;
 }
