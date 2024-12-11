@@ -1,0 +1,8 @@
+---
+import HeroCard from "../heroCard/HeroCard.astro";
+import heroData from "@data/hero.data";
+---
+
+<div class="swiper-wrapper">
+  {heroData.map((hero, index) => <HeroCard hero={hero} index={index} />)}
+</div>
