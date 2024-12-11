@@ -1,0 +1,12 @@
+---
+import studentsGroupsData from "@data/studentsGroups.data";
+import StudentGroupCard from "../studentGroupCard/StudentGroupCard.astro";
+---
+
+<div class="latest-news-area ptb-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      {studentsGroupsData.map((group) => <StudentGroupCard group={group} />)}
+    </div>
+  </div>
+</div>
