@@ -13,8 +13,9 @@ export const navigationData: NavItem[] = [
     children: [
       { title: "Inicio", link: "/" },
       { title: "Decanato Estudiantes", link: "/decanato-de-estudiantes" },
-      { title: "Orientación", link: "https://orientacion.pucmm.edu.do" },
-      { title: "PUCMM", link: "https://pucmm.edu.do" },
+      { title: "Portal PUCMM", link: "https://pucmm.edu.do" },
+      { title: "Portal Orientación", link: "https://orientacion.pucmm.edu.do" },
+      { title: "Portal de Investigación", link: "https://investigacion.pucmm.edu.do" },
 
     ]
   },
