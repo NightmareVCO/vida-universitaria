@@ -1,0 +1,21 @@
+---
+import BulletPoint from '@components/BulletPoints/BulletPoint/BulletPoint.astro';
+
+import type { MainBulletPointsGroup } from '@data/_static/bulletPoints/mainBullePoints.data';
+
+interface Props {
+	bulletPoints: MainBulletPointsGroup[];
+}
+
+const { bulletPoints } = Astro.props;
+---
+
+<div class="list">
+  <div class="row">
+    {
+      bulletPoints.map((bulletPointGroup) => (
+        <BulletPoint bulletPointGroup={bulletPointGroup} />
+      ))
+    }
+  </div>
+</div>

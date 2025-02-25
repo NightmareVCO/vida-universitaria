@@ -1,0 +1,42 @@
+---
+import type { NumberData } from '@data/_static/numbers/mainNumbers.data';
+
+interface Props {
+	numberData: NumberData;
+}
+
+const { numberData } = Astro.props;
+---
+
+<div class="col-lg-4 col-4">
+  <div class="counter-card">
+    <h2>
+      <span class="odometer odometer-auto-theme" data-count={numberData.count}>
+        <span class="odometer-inside">
+          <span class="odometer-digit">
+            <span class="odometer-digit-spacer">0</span>
+            <span class="odometer-digit-inner">
+              <span class="odometer-ribbon">
+                <span class="odometer-ribbon-inner">
+                  <span class="odometer-value">0</span>
+                </span>
+              </span>
+            </span>
+          </span>
+          <span class="odometer-digit">
+            <span class="odometer-digit-spacer">0</span>
+            <span class="odometer-digit-inner">
+              <span class="odometer-ribbon">
+                <span class="odometer-ribbon-inner">
+                  <span class="odometer-value">0</span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>
+      <span class="target">{numberData.suffix}</span>
+    </h2>
+    <p>{numberData.description}</p>
+  </div>
+</div>

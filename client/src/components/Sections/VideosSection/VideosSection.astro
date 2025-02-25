@@ -1,0 +1,93 @@
+---
+export const prerender = false;
+
+import { Image } from 'astro:assets';
+import { YOUTUBE_URL } from 'astro:env/client';
+import { Routes } from '@data/_centralized/routes.data';
+import { getVideos } from '@data/_fetch/videos.fetch';
+import { parseDate } from '@utils/date.utils';
+
+const [videos, error] = await getVideos({ youtubeUrl: YOUTUBE_URL });
+if (error) {
+	console.error(error);
+}
+---
+
+<section class="podcasts-area pt-100 pb-70 bg-f4f6f9">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title">
+          <h2>Ultimas Novedades</h2>
+          <p>
+            Bienvenido a la sección de Podcasts de PUCMM, donde el conocimiento
+            y las ideas cobran vida a través del poder del audio.
+          </p>
+        </div>
+        <div class="row">
+          {
+            videos &&
+              videos.map((video: any) => (
+                <div class="col-lg-4 col-md-3">
+                  <div class="single-podcasts-card">
+                    <div class="podcasts-image">
+                      <div style="width: 415px; height: 276px; overflow: hidden;">
+                        <a
+                          href={video.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Image
+                            src={video.image}
+                            alt={video.title}
+                            width="415"
+                            height="276"
+                            style=" width: 415; height: 276px; object-fit: cover; object-position: center; transform: scale(1.2);"
+                          />
+                        </a>
+                      </div>
+                      <a
+                        class="popup-youtube play-btn"
+                        href={video.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-sharp fa-solid fa-circle-play" />
+                      </a>
+                    </div>
+                    <div class="podcast-content">
+                      <ul class="d-flex justify-content-between">
+                        <li class="date">{parseDate(video.published)}</li>
+                      </ul>
+                      <a
+                        href={video.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <h3>
+                          {video.title.length > 50
+                            ? video.title.substring(0, 50) + "..."
+                            : video.title}
+                        </h3>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="more-item text-center">
+      <p>
+        Mira todos los videos de PUCMM.{" "}
+        <a
+          href={Routes.EXTERNAL_PRENSA_VIDA_UNIVERSITARIA}
+          class="read-more-btn active"
+        >
+          PUCMM Tv <i class="fa fa-arrow-right"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

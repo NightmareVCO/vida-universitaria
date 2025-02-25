@@ -1,0 +1,89 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+import Banner from '@components/Banner/Banner.astro';
+import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
+
+import AsideNavLinks from '@components/AsideNav/AsideNavLinks';
+import CampusInfo from '@components/CampusInfo/CampusInfo.astro';
+---
+
+<Layout title="Departamento de Educación Física y Deportes | PUCMM">
+  <Banner
+    title="Departamento de Educación Física y Deportes"
+    path="Departamento de Educación Física y Deportes"
+    origin="Inicio"
+    originLink="/"
+  />
+
+  <div class="news-details-area pt-5 pb-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="news-details">
+            <div class="news-simple-card">
+              <DynamicCarousel
+                carouselImages={[
+                  "/templates/academic/academic-1.jpg",
+                  "/templates/academic/academic-2.jpg",
+                  "/templates/academic/academic-3.jpg",
+                  "/templates/academic/academic-4.jpg",
+                ]}
+              />
+
+              <div class="text-center">
+                <h2>Departamento de Educación Física y Deportes</h2>
+                <!-- <Image
+                  src="/favicon.png"
+                  alt="Decanato de Estudiantes"
+                  width={450}
+                  height={450}
+                /> -->
+              </div>
+              <p>
+                El estudiante se inserta a la vida académica a través del
+                Decanato de Estudiantes. Éste tiene como función servir de
+                enlace entre los estudiantes y los directivos de la Institución
+                .Se ocupa también de programar y coordinar actividades
+                curriculares y de servicio estudiantil, que ayudan al desarrollo
+                integral del alumno. Organiza actividades formativas,
+                recreativas y culturales para facilitar que la estadía del
+                alumno en la Universidad sea lo más provechosa posible.
+              </p>
+
+              <p>
+                Su visión es lograr que cada ente asuma de manera automática y
+                espontánea la realización de movimientos a lo largo de su
+                existencia y lograr así un nivel de vida en consonancia con la
+                capacidad de sus potencialidades por el bien propio, de su
+                alrededor y de la patria.
+              </p>
+
+              <iframe
+                width="100%"
+                height="500px"
+                src="https://www.youtube.com/embed/xSzUUMfURZ8?si=Toqgc1lDBtCsATEf"
+                title="Deporte PUCMM"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+
+              <p>
+                Los departamentos de Orientación, Deportes, Salud, Arte y
+                Cultura, son dependencias del Decanato de Estudiantes. A través
+                de sus diversas actividades, propicia un ambiente favorable para
+                la integración de los estudiantes a la familia universitaria.
+              </p>
+
+              <CampusInfo />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <AsideNavLinks />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

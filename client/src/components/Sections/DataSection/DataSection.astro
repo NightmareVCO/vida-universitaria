@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+
+import BulletPointRender from '@components/BulletPoints/BulletPointRender/BulletPointRender.astro';
+import NumberRender from '@components/Numbers/NumberRender/NumberRender.astro';
+
+import mainBulletPointsData from '@data/_static/bulletPoints/mainBullePoints.data';
+import mainNumbersData from '@data/_static/numbers/mainNumbers.data';
+---
+
+<section class="campus-information-area pb-100 pt-70">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="campus-content pr-20">
+          <div class="campus-title">
+            <h2>Colocar Datos Númericos</h2>
+            <p>
+              Aquí se puede colocar una descripción de la sección o un texto
+            </p>
+          </div>
+          <BulletPointRender bulletPoints={mainBulletPointsData} />
+          <NumberRender numbersData={mainNumbersData} />
+
+          <a href="#" class="default-btn-one"
+            >LLamado de acción<i class="fa-solid fa-arrow-right"></i></a
+          >
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="campus-image pl-20">
+          <Image
+            src="/templates/campus/img-1.jpg"
+            alt="Image"
+            width={1558}
+            height={1333}
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

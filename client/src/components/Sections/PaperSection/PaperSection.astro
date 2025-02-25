@@ -1,0 +1,68 @@
+---
+export const prerender = false;
+
+import { Image } from 'astro:assets';
+import { PAPERS_URL } from 'astro:env/client';
+import { Routes } from '@data/_centralized/routes.data';
+import { getPapers } from '@data/_fetch/paper.fetch';
+import { parseDate } from '@utils/date.utils';
+
+const [newsItems, error] = await getPapers({ papersUrl: PAPERS_URL });
+if (error) {
+	console.error(error);
+}
+
+const MAX_LENGTH = 50;
+---
+
+<div class="students-stories-area body-color pt-100 pb-70">
+  <div class="container">
+    <div class="section-title">
+      <h2>Ultimas noticias</h2>
+      <p>Noticias traidas de Prensa PUCMM</p>
+    </div>
+    <div class="row justify-content-center">
+      {
+        newsItems &&
+          newsItems.map((item: any) => (
+            <div class="col-lg-4 col-md-6">
+              <div class="single-stories-card">
+                <a href={item.link} target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width="415"
+                    height="276"
+                    style="width: 415px; height: 276px; object-fit: cover; object-position: center;"
+                  />
+                </a>
+                <div class="stories-content">
+                  <ul class="d-flex justify-content-between">
+                    <li class="date">{parseDate(item.pubDate)}</li>
+                  </ul>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    <h3>
+                      {item.title.length > MAX_LENGTH
+                        ? item.title.substring(0, MAX_LENGTH) + "..."
+                        : item.title}
+                    </h3>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+      }
+    </div>
+    <div class="more-item text-center">
+      <p>
+        Mira todas las noticias de Vida Estudiantil.{" "}
+        <a
+          href={Routes.EXTERNAL_PRENSA_VIDA_UNIVERSITARIA}
+          class="read-more-btn active"
+        >
+          Prensa PUCMM <i class="fa fa-arrow-right"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

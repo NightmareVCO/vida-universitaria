@@ -1,0 +1,33 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+import Banner from "@components/Banner/Banner.astro";
+import SwitchCareer from "@components/Buttons/SwitchCareer/SwitchCareer";
+import SwitchCampus from "@components/Buttons/switchCampus/SwitchCampus.astro";
+import EventSection from "@components/Sections/EventSection/EventSection";
+import { Routes } from "@data/_centralized/routes.data";
+
+import { API_URL } from "astro:env/client";
+---
+
+<Layout title="Inicio | Vida Universitaria">
+  <Banner
+    title="Calendario de Actividades - Campus Santo Domingo"
+    path="Calendario de Actividades - CSD"
+    origin="Grupos Estudiantiles"
+    originLink={Routes.GRUPOS_ESTUDIANTILES}
+  />
+
+  <section class="educationist-area body-color pb-70">
+    <div class="d-flex justify-content-between">
+      <SwitchCampus
+        CSTICampusPath={Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES_CSTI}
+        CSDCampusPath={Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES_CSD}
+        inactiveCampus="CSTI"
+      />
+      <SwitchCareer client:only />
+    </div>
+
+    <EventSection campus="CSD" apiUrl={API_URL} client:only />
+  </section>
+</Layout>

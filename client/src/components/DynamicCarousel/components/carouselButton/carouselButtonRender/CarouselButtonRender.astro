@@ -1,0 +1,11 @@
+---
+import CarouselButtonItem from '../carouselButtonItem/CarouselButtonItem.astro';
+
+interface Props {
+	carouselImages: string[];
+}
+
+const { carouselImages } = Astro.props;
+---
+
+{carouselImages.map((_, index) => ( <CarouselButtonItem index={index} />))}

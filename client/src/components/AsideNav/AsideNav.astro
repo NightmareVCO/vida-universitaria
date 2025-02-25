@@ -1,0 +1,17 @@
+---
+import AsideEventCardRender from '@components/Cards/Event/AsideEventsCard/AsideEventCardRender/AsideEventCardRender.astro';
+import type { Activity } from '@data/_types/types';
+
+interface Props {
+	activities?: Activity[];
+}
+
+const { activities } = Astro.props;
+---
+
+<div class="col-lg-4">
+  <div class="related-post-area">
+    <h3>Actividades recientes</h3>
+    <AsideEventCardRender activities={activities} />
+  </div>
+</div>

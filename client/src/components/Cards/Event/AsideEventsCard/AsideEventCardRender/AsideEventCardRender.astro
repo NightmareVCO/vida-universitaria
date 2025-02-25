@@ -1,0 +1,18 @@
+---
+import AsideEventCard from '@components/Cards/Event/AsideEventsCard/AsideEventCard/AsideEventCard.astro';
+import type { Activity } from '@data/_types/types';
+
+interface Props {
+	activities?: Activity[];
+}
+
+const { activities } = Astro.props;
+---
+
+{
+  activities &&
+    activities.map((activity: Activity) => (
+      <AsideEventCard activity={activity} />
+    ))
+}
+{!activities && <p>No hay actividades recientes</p>}

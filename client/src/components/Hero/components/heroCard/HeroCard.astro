@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import type { Hero } from '@data/_types/types';
+
+interface Props {
+	hero: Hero;
+	index: number;
+}
+
+const { hero, index } = Astro.props;
+const positionClass = (index + 1) % 2 === 0 ? 'even-slider' : 'odd-slider';
+---
+
+<div class={`swiper-slide ${positionClass}`}>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="banner-content">
+          <h1>{hero.title}</h1>
+          <p>{hero.description}</p>
+          <ul>
+            {
+              hero.infoLink && hero.infoText && (
+                <li>
+                  <a href={hero.infoLink} class="default-btn-one">
+                    <i class="flaticon-bookmark" />
+                    {hero.infoText}
+                  </a>
+                </li>
+              )
+            }
+            {
+              hero.contactLink && hero.contactText && (
+                <li>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={hero.contactLink}
+                    class="default-btn-two"
+                  >
+                    <i class="flaticon-speech-bubble" />
+                    {hero.contactText}
+                  </a>
+                </li>
+              )
+            }
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="banner-image">
+          <Image src={hero.image} alt={hero.title} height={200} width={100} />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+---
+import NumberComponent from '@components/Numbers/Number/Number.astro';
+
+import type { NumberData } from '@data/_types/types';
+
+interface Props {
+	numbersData: NumberData[];
+}
+
+const { numbersData } = Astro.props;
+---
+
+<div class="counter">
+  <div class="row">
+    {
+      numbersData &&
+        numbersData.map((numberData) => (
+          <NumberComponent numberData={numberData} />
+        ))
+    }
+  </div>
+</div>

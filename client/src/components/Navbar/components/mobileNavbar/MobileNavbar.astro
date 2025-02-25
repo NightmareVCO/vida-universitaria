@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<nav class="mobile-responsive-nav">
+  <div class="container-fluid">
+    <div class="mobile-responsive-menu" aria-label="Menú de navegación móvil">
+      <div class="logo" itemscope itemtype="https://schema.org/Organization">
+        <a
+          href="/"
+          title="Volver a la página de inicio"
+          aria-label="Logo del sitio"
+          itemprop="url"
+          rel="home"
+        >
+          <Image
+            src="/assets/images/logo.webp"
+            class="main-logo"
+            alt="Logo de Vida Universitaria - Portal Estudiantil"
+            width="567"
+            height="148"
+            itemprop="logo"
+            loading="eager"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
