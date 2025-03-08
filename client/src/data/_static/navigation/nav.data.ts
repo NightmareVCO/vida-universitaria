@@ -10,27 +10,13 @@ export const navigationData: NavItem[] = [
 			{ title: 'Decanato Estudiantes', link: Routes.DECANATO },
 			{ title: 'Portal PUCMM', link: Routes.EXTERNAL_PUCMM },
 			{ title: 'Portal Orientación', link: Routes.EXTERNAL_ORIENTACION },
+			{ title: 'Portal de Prensa', link: Routes.EXTERNAL_PRENSA_VIDA_UNIVERSITARIA },
 			{ title: 'Portal de Investigación', link: Routes.EXTERNAL_INVESTIGACION },
 		],
 	},
 	{
 		title: 'Servicios',
 		children: [
-			{ title: 'Seguridad', link: Routes.SERVICIOS_SEGURIDAD },
-			{ title: 'Salud', link: Routes.SERVICIOS_SALUD },
-			{ title: 'Inclusión', link: Routes.SERVICIOS_INCLUSION },
-			{
-				title: 'Compromiso Universitario',
-				link: Routes.SERVICIOS_COMPROMISO_UNIVERSITARIO,
-			},
-			{
-				title: 'Beneficios Estudiantiles',
-				link: Routes.SERVICIOS_BENEFICIOS_ESTUDIANTILES,
-			},
-			{
-				title: 'Movilidad Estudiantil',
-				link: Routes.SERVICIOS_MOVILIDAD_ESTUDIANTIL,
-			},
 			{
 				title: 'Consejeria',
 				children: [
@@ -55,6 +41,21 @@ export const navigationData: NavItem[] = [
 						link: Routes.SERVICIOS_CONSEJERIA_VOCACIONAL,
 					},
 				],
+			},
+			{ title: 'Salud', link: Routes.SERVICIOS_SALUD },
+			{ title: 'Seguridad', link: Routes.SERVICIOS_SEGURIDAD },
+			{ title: 'Inclusión', link: Routes.SERVICIOS_INCLUSION },
+			{
+				title: 'Beneficios Estudiantiles',
+				link: Routes.SERVICIOS_BENEFICIOS_ESTUDIANTILES,
+			},
+			{
+				title: 'Compromiso Universitario',
+				link: Routes.SERVICIOS_COMPROMISO_UNIVERSITARIO,
+			},
+			{
+				title: 'Movilidad Estudiantil',
+				link: Routes.SERVICIOS_MOVILIDAD_ESTUDIANTIL,
 			},
 		],
 	},

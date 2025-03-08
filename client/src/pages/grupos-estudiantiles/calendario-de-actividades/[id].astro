@@ -15,7 +15,7 @@ import {
 	studentsGroupsDataCSTI,
 } from '@data/_centralized/groups/studentsGroups.data';
 import { SocialMediaEnum } from '@data/_centralized/groups/studentsGroups.data';
-import { StudentsGroupsImages } from '@data/_centralized/images.data';
+import { StudentsGroupsImagesCSTI } from '@data/_centralized/images.data';
 import { Routes } from '@data/_centralized/routes.data';
 import { getPostById } from '@data/_fetch/posts.fetch';
 import type { Post } from '@data/_types/types';
@@ -54,8 +54,8 @@ if (error) {
                   {studentGroupData.title}
                 </h2>
                 <Image
-                  src={StudentsGroupsImages[
-                    studentGroupData.initials as keyof typeof StudentsGroupsImages
+                  src={StudentsGroupsImagesCSTI[
+                    studentGroupData.initials as keyof typeof StudentsGroupsImagesCSTI
                   ]}
                   alt={studentGroupData.title}
                   width={450}

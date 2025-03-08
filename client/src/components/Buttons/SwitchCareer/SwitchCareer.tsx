@@ -15,7 +15,11 @@ export default function SwitchCareer() {
 	return (
 		<div className="container">
 			<div className="d-flex justify-content-center gap-4 py-5">
-				<select className="default-btn-one" onChange={handleFacultyChange}>
+				<select
+					className="default-btn-one"
+					style={{ minWidth: '277px' }}
+					onChange={handleFacultyChange}
+				>
 					<option value="" selected>
 						Selecciona una carrera
 					</option>

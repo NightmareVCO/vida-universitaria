@@ -1,12 +1,11 @@
 ---
 import Layout from '@layouts/Layout.astro';
 
+import AsideNavLinks from '@components/AsideNav/AsideNavLinks';
 import Banner from '@components/Banner/Banner.astro';
 import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
 
 import CampusInfo from '@components/CampusInfo/CampusInfo.astro';
-import NavbarMenuItems from '@components/Navbar/components/desktopNavbar/NavbarMenuItems';
-import { navigationData } from '@data/_static/navigation/nav.data';
 ---
 
 <Layout title="Identidad Católica | PUCMM">
@@ -86,15 +85,7 @@ import { navigationData } from '@data/_static/navigation/nav.data';
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="related-post-area">
-            <h3>Navegación</h3>
-            <!-- New Vertical nav able to expand -->
-            <div>
-              <ul class="navbar-nav mx-auto">
-                <NavbarMenuItems items={navigationData} />
-              </ul>
-            </div>
-          </div>
+          <AsideNavLinks />
         </div>
       </div>
     </div>

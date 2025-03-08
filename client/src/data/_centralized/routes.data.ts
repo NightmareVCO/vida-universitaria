@@ -117,10 +117,14 @@ export enum Routes {
 	SERVICIOS_BENEFICIOS_ESTUDIANTILES = '/servicios/beneficios-estudiantiles',
 	SERVICIOS_MOVILIDAD_ESTUDIANTIL = '/servicios/movilidad-estudiantil',
 
+	FILE_1_SERVICIOS_SEGURIDAD = '/files/servicios/seguridad/politica-seguridad-general.pdf',
+	FILE_1_BENEFICIOS_ESTUDIANTILES = '/files/servicios/beneficios/beneficios-y-servicios.pdf',
+
 	EXTERNAL_PUCMM = 'https://pucmm.edu.do',
 	EXTERNAL_ORIENTACION = 'https://orientacion.pucmm.edu.do',
 	EXTERNAL_INVESTIGACION = 'https://investigacion.pucmm.edu.do',
 	EXTERNAL_PRENSA_VIDA_UNIVERSITARIA = 'https://prensa.pucmm.edu.do/vida-estudiantil/',
+	EXTERNAL_YOUTUBE_CHANNEL = 'https://www.youtube.com/@PucmmTV/videos',
 }
 
 export const routesData = [

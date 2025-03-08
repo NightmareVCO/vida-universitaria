@@ -1,5 +1,5 @@
 ---
-import type { NumberData } from '@data/_static/numbers/mainNumbers.data';
+import type { NumberData } from '@data/_types/types';
 
 interface Props {
 	numberData: NumberData;
@@ -10,25 +10,25 @@ const { numberData } = Astro.props;
 
 <div class="col-lg-4 col-4">
   <div class="counter-card">
-    <h2>
+    <h2 class="text-center text-lg-start">
       <span class="odometer odometer-auto-theme" data-count={numberData.count}>
         <span class="odometer-inside">
           <span class="odometer-digit">
-            <span class="odometer-digit-spacer">0</span>
+            <span class="odometer-digit-spacer">{numberData.count}</span>
             <span class="odometer-digit-inner">
               <span class="odometer-ribbon">
                 <span class="odometer-ribbon-inner">
-                  <span class="odometer-value">0</span>
+                  <span class="odometer-value">{numberData.count}</span>
                 </span>
               </span>
             </span>
           </span>
           <span class="odometer-digit">
-            <span class="odometer-digit-spacer">0</span>
+            <span class="odometer-digit-spacer">{numberData.count}</span>
             <span class="odometer-digit-inner">
               <span class="odometer-ribbon">
                 <span class="odometer-ribbon-inner">
-                  <span class="odometer-value">0</span>
+                  <span class="odometer-value">{numberData.count}</span>
                 </span>
               </span>
             </span>

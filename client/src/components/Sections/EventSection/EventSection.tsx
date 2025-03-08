@@ -56,24 +56,19 @@ type EvenSectionProps = {
 	isSection?: boolean;
 };
 
-import EventCardRender from "@components/Cards/Event/EventsCard/EventCardRender/EventCardRender";
-import type { Career } from "@data/_centralized/careers.data";
+import EventCardRender from '@components/Cards/Event/EventsCard/EventCardRender/EventCardRender';
+import type { Career } from '@data/_centralized/careers.data';
 
-import { studentsGroupsDataCSTI } from "@data/_centralized/groups/studentsGroups.data";
-import { getPostsByCampusAndClub } from "@data/_fetch/posts.fetch";
-import type { Campus, Activity } from "@data/_types/types";
-import { getCareerEnumKeyByName, getClubByCareer } from "@utils/career.utils";
-import { useEffect, useState } from "react";
+import { studentsGroupsDataCSTI } from '@data/_centralized/groups/studentsGroups.data';
+import { getPostsByCampusAndClub } from '@data/_fetch/posts.fetch';
+import type { Activity, Campus } from '@data/_types/types';
+import { getCareerEnumKeyByName, getClubByCareer } from '@utils/career.utils';
+import { useEffect, useState } from 'react';
 
-export default function EvenSection({
-	campus,
-	apiUrl,
-	isSection,
-}: EvenSectionProps) {
+export default function EvenSection({ campus, apiUrl, isSection }: EvenSectionProps) {
 	const [activities, setActivities] = useState<Activity[]>([]);
 
-	const searchParamCareer =
-		new URLSearchParams(window.location.search).get("career") ?? "";
+	const searchParamCareer = new URLSearchParams(window.location.search).get('career') ?? '';
 	const career = getCareerEnumKeyByName(searchParamCareer as Career);
 	const club = getClubByCareer(career) ?? undefined;
 
@@ -99,8 +94,8 @@ export default function EvenSection({
 				<div className="section-title pt-5">
 					<h2>Próximas Actividades</h2>
 					<p>
-						Aquí estarán los eventos que se realizarán en la universidad, para
-						que los estudiantes puedan asistir y participar.
+						Aquí estarán los eventos que se realizarán en la universidad, para que los estudiantes
+						puedan asistir y participar.
 					</p>
 				</div>
 
@@ -112,7 +107,7 @@ export default function EvenSection({
 				{isSection && (
 					<div className="more-item text-center">
 						<p>
-							Mira todas las actividades.{" "}
+							Mira todas las actividades.{' '}
 							<a href="events.html" className="read-more-btn active">
 								Calendario de Actividades <i className="fa fa-arrow-right" />
 							</a>

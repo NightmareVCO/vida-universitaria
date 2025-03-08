@@ -1,16 +1,18 @@
 ---
 export const prerender = false;
 
-import { Image } from 'astro:assets';
-import { YOUTUBE_URL } from 'astro:env/client';
-import { Routes } from '@data/_centralized/routes.data';
-import { getVideos } from '@data/_fetch/videos.fetch';
-import { parseDate } from '@utils/date.utils';
+import { Image } from "astro:assets";
+import { YOUTUBE_RSS_URL } from "astro:env/client";
+import { Routes } from "@data/_centralized/routes.data";
+import { getVideos } from "@data/_fetch/videos.fetch";
+import { parseDate } from "@utils/date.utils";
 
-const [videos, error] = await getVideos({ youtubeUrl: YOUTUBE_URL });
+const [videos, error] = await getVideos({ youtubeUrl: YOUTUBE_RSS_URL });
 if (error) {
-	console.error(error);
+  console.error(error);
 }
+
+const MAX_LENGTH = 45;
 ---
 
 <section class="podcasts-area pt-100 pb-70 bg-f4f6f9">
@@ -28,24 +30,22 @@ if (error) {
           {
             videos &&
               videos.map((video: any) => (
-                <div class="col-lg-4 col-md-3">
+                <div class="col-lg-4 col-md-6">
                   <div class="single-podcasts-card">
                     <div class="podcasts-image">
-                      <div style="width: 415px; height: 276px; overflow: hidden;">
-                        <a
-                          href={video.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Image
-                            src={video.image}
-                            alt={video.title}
-                            width="415"
-                            height="276"
-                            style=" width: 415; height: 276px; object-fit: cover; object-position: center; transform: scale(1.2);"
-                          />
-                        </a>
-                      </div>
+                      <a
+                        href={video.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Image
+                          src={video.image}
+                          alt={video.title}
+                          class="card-responsive-video"
+                          width="415"
+                          height="276"
+                        />
+                      </a>
                       <a
                         class="popup-youtube play-btn"
                         href={video.link}
@@ -65,8 +65,8 @@ if (error) {
                         rel="noopener noreferrer"
                       >
                         <h3>
-                          {video.title.length > 50
-                            ? video.title.substring(0, 50) + "..."
+                          {video.title.length > MAX_LENGTH
+                            ? video.title.substring(0, MAX_LENGTH) + "..."
                             : video.title}
                         </h3>
                       </a>
@@ -81,10 +81,7 @@ if (error) {
     <div class="more-item text-center">
       <p>
         Mira todos los videos de PUCMM.{" "}
-        <a
-          href={Routes.EXTERNAL_PRENSA_VIDA_UNIVERSITARIA}
-          class="read-more-btn active"
-        >
+        <a href={Routes.EXTERNAL_YOUTUBE_CHANNEL} class="read-more-btn active">
           PUCMM Tv <i class="fa fa-arrow-right"></i>
         </a>
       </p>

@@ -1,15 +1,15 @@
 ---
 export const prerender = false;
 
-import { Image } from 'astro:assets';
-import { PAPERS_URL } from 'astro:env/client';
-import { Routes } from '@data/_centralized/routes.data';
-import { getPapers } from '@data/_fetch/paper.fetch';
-import { parseDate } from '@utils/date.utils';
+import { Image } from "astro:assets";
+import { PAPERS_URL } from "astro:env/client";
+import { Routes } from "@data/_centralized/routes.data";
+import { getPapers } from "@data/_fetch/paper.fetch";
+import { parseDate } from "@utils/date.utils";
 
 const [newsItems, error] = await getPapers({ papersUrl: PAPERS_URL });
 if (error) {
-	console.error(error);
+  console.error(error);
 }
 
 const MAX_LENGTH = 50;
@@ -31,9 +31,9 @@ const MAX_LENGTH = 50;
                   <Image
                     src={item.image}
                     alt={item.title}
+                    class="card-responsive-image"
                     width="415"
                     height="276"
-                    style="width: 415px; height: 276px; object-fit: cover; object-position: center;"
                   />
                 </a>
                 <div class="stories-content">

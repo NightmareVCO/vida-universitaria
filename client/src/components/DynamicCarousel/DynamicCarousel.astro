@@ -4,9 +4,10 @@ import CarouselImageRender from './components/carouselImage/carouselImageRender/
 
 interface Props {
 	carouselImages: string[];
+	isFullWidth?: boolean;
 }
 
-const { carouselImages } = Astro.props;
+const { carouselImages, isFullWidth } = Astro.props;
 ---
 
 <div class="d-flex justify-content-center">
@@ -19,7 +20,10 @@ const { carouselImages } = Astro.props;
       <CarouselButtonRender carouselImages={carouselImages} />
     </div>
     <div class="carousel-inner">
-      <CarouselImageRender carouselImages={carouselImages} />
+      <CarouselImageRender
+        carouselImages={carouselImages}
+        isFullWidth={isFullWidth}
+      />
       <button
         class="carousel-control-prev"
         type="button"

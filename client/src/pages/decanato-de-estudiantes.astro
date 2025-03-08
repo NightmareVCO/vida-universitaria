@@ -6,6 +6,8 @@ import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
 
 import AsideNavLinks from '@components/AsideNav/AsideNavLinks';
 import CampusInfo from '@components/CampusInfo/CampusInfo.astro';
+import Personal from '@components/Personal/Personal.astro';
+import { studentsDeaneryPersonalImagesArray } from '@data/_centralized/images.data';
 import { Routes } from '@data/_centralized/routes.data';
 ---
 
@@ -34,12 +36,6 @@ import { Routes } from '@data/_centralized/routes.data';
 
               <div class="text-center">
                 <h2>Decanato de Estudiantes</h2>
-                <!-- <Image
-                  src="/favicon.png"
-                  alt="Decanato de Estudiantes"
-                  width={450}
-                  height={450}
-                /> -->
               </div>
               <p>
                 El estudiante se inserta a la vida académica a través del
@@ -78,6 +74,32 @@ import { Routes } from '@data/_centralized/routes.data';
                 de sus diversas actividades, propicia un ambiente favorable para
                 la integración de los estudiantes a la familia universitaria.
               </p>
+
+              <p>
+                Su equipo humano está constituido por la Decana de Estudiantes,
+                asistentes, coordinadores y personal de apoyo.
+              </p>
+
+              <Personal membersImages={studentsDeaneryPersonalImagesArray} />
+
+              <div class="my-4">
+                <h3>Servicios del Decanato de Estudiantes</h3>
+                <p>
+                  El Decanato de Estudiantes ofrece una serie de servicios para
+                  los estudiantes, en el siguiente video se presentan los
+                  servicios que ofrece el Decanato de Estudiantes.
+                </p>
+
+                <iframe
+                  width="100%"
+                  height="500px"
+                  src="https://www.youtube.com/embed/zUskgKTE8Ps?si=bJo8GlYcSjcV5hj9"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen></iframe>
+              </div>
 
               <CampusInfo />
             </div>

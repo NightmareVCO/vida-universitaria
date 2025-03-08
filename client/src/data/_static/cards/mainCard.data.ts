@@ -2,25 +2,25 @@ import type { MainCardData } from '@data/_types/types';
 
 export const mainCardsData: MainCardData[] = [
 	{
-		title: 'Texto 1',
+		title: 'Misión',
 		description:
-			'Aquí se puede colocar una descripción de la sección o un texto para describir el contenido de la sección.',
+			'La misión del Decanato de Estudiantes es la de promover el desarrollo integral de los estudiantes, a través de la implementación de programas y servicios que contribuyan a su formación académica, personal y social.',
 		icon: 'fa-solid fa-graduation-cap',
 		link: 'educationist-details.html',
 		label: 'Ver más',
 	},
 	{
-		title: 'Texto 2',
+		title: 'Visión',
 		description:
-			'Aquí se puede colocar una descripción de la sección o un texto para describir el contenido de la sección.',
+			'Ser un Decanato de Estudiantes que promueva el desarrollo integral de los estudiantes, a través de la implementación de programas y servicios que contribuyan a su formación académica, personal y social.',
 		icon: 'fa-solid fa-user-graduate',
 		link: 'educationist-details.html',
 		label: 'Ver más',
 	},
 	{
-		title: 'Texto 3',
+		title: 'Valores',
 		description:
-			'Aquí se puede colocar una descripción de la sección o un texto para describir el contenido de la sección.',
+			'Los valores del Decanato de Estudiantes son la responsabilidad, la honestidad, la solidaridad, la tolerancia, la equidad y la justicia. Estos valores son fundamentales para el desarrollo integral de los estudiantes.',
 		icon: 'fa-solid fa-pen-to-square',
 		link: 'educationist-details.html',
 		label: 'Ver más',

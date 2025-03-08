@@ -1,23 +1,18 @@
-import { monthNames } from "@utils/date.utils";
+import { monthNames } from '@utils/date.utils';
 
-import type { StudentGroupsEnumCSTI } from "@data/_centralized/groups/studentsGroups.data";
-import { Routes } from "@data/_centralized/routes.data";
-import type { Activity, StudentGroup } from "@data/_types/types";
+import type { StudentGroupsEnumCSTI } from '@data/_centralized/groups/studentsGroups.data';
+import { Routes } from '@data/_centralized/routes.data';
+import type { Activity, StudentGroup } from '@data/_types/types';
 
 type EventCardProps = {
 	activity: Activity;
 	studentsGroupsData: Record<StudentGroupsEnumCSTI, StudentGroup>;
 };
 
-export default function EventCard({
-	activity,
-	studentsGroupsData,
-}: EventCardProps) {
+export default function EventCard({ activity, studentsGroupsData }: EventCardProps) {
 	const studentGroup =
 		studentsGroupsData[
-			activity.academicGroup
-				.split(" - ")
-				.join("-") as unknown as StudentGroupsEnumCSTI
+			activity.academicGroup.split(' - ').join('-') as unknown as StudentGroupsEnumCSTI
 		];
 
 	const date = new Date(activity.date);
@@ -28,9 +23,7 @@ export default function EventCard({
 		<div className="col-lg-4 col-md-6">
 			<div className="single-events-card">
 				<div className="events-image">
-					<a
-						href={`${Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES}/${activity.id}`}
-					>
+					<a href={`${Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES}/${activity.id}`}>
 						{activity.image && (
 							<img
 								src={activity.image}
@@ -51,22 +44,18 @@ export default function EventCard({
 					<div className="admin">
 						<div className="d-flex flex-row justify-content-end align-items-center gap-2">
 							<img
-								src={studentGroup?.logo ?? "/src/assets/images/logo.webp"}
-								alt={studentGroup?.label ?? "Student Group"}
+								src={studentGroup?.logo ?? '/src/assets/images/logo.webp'}
+								alt={studentGroup?.label ?? 'Student Group'}
 								height={28}
 								width={28}
 								decoding="async"
 								loading="lazy"
 							/>
-							<a href={studentGroup?.path}>{studentGroup?.label ?? "PUCMM"}</a>
+							<a href={studentGroup?.path}>{studentGroup?.label ?? 'PUCMM'}</a>
 						</div>
 					</div>
-					<a
-						href={`${Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES}/${activity.id}`}
-					>
-						<a
-							href={`${Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES}/${activity.id}`}
-						>
+					<a href={`${Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES}/${activity.id}`}>
+						<a href={`${Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES}/${activity.id}`}>
 							<h3
 								// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 								dangerouslySetInnerHTML={{

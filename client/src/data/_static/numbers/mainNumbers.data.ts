@@ -2,18 +2,18 @@ import type { NumberData } from '@data/_types/types';
 
 export const mainNumbersData: NumberData[] = [
 	{
-		count: 80,
-		description: 'Valor #1',
+		count: 30,
+		description: 'Grupos Académicos',
 		suffix: '+',
 	},
 	{
-		count: 35,
-		description: 'Valor #2',
-		suffix: 'k+',
+		count: 8,
+		description: 'Beneficios',
+		suffix: '+',
 	},
 	{
-		count: 52,
-		description: 'Valor #3',
+		count: 21,
+		description: 'Servicios',
 		suffix: '+',
 	},
 ];

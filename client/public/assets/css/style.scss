@@ -256,7 +256,7 @@ ul {
 	cursor: pointer;
 	top: 87%;
 	right: -10%;
-	background-color: #e32845;
+	background-color: $color_4;
 	z-index: 4;
 	width: 50px;
 	text-align: center;
@@ -295,7 +295,7 @@ ul {
 	height: 100%;
 	border-radius: 100%;
 	z-index: -1;
-	background-color: #e32845;
+	background-color: $color_4;
 	opacity: 0;
 	visibility: hidden;
 	transition: 0.5s;
@@ -303,7 +303,7 @@ ul {
 
 .go-top:hover {
 	color: #ffffff;
-	background: #111d5e;
+	background: $color_4;
 }
 
 .go-top:hover::before {
@@ -4574,4 +4574,37 @@ Start 404 Error Area Style
       border-bottom: none;
     }
   }
+}
+
+  /* Cambiar el color del botón del acordeón en estado cerrado */
+  .accordion-button {
+    background-color: none; /* Color de fondo deseado */
+    color: black; /* Color de texto */
+    border: none;
+		font-weight: bold;
+  }
+
+  /* Cambiar el color del botón al pasar el mouse */
+  .accordion-button:hover {
+    background-color: none;
+  }
+
+  /* Cambiar el color del botón cuando está abierto (no colapsado) */
+  .accordion-button:not(.collapsed) {
+    background-color: $color_2;
+    color: #fff;
+  }
+
+  .accordion-button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+	.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+.base-carousel-image {
+	object-fit: cover;
+	object-position: center;
 }

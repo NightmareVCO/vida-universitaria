@@ -33,77 +33,75 @@ import { StudentGroupsEnumCSTI } from '@data/_centralized/groups/studentsGroups.
 // }
 
 export const getCareerEnumKeyByName = (name: string) => {
-  switch (name) {
-    case 'Arquitectura':
-      return Career.ARQ;
-    case 'Comunicación Social':
-      return Career.COM;
-    case 'Dirección Empresarial':
-      return Career.DIR;
-    case 'Derecho':
-      return Career.DER;
-    case 'Diseño e Interiorismo':
-      return Career.DIN;
-    case 'Economía':
-      return Career.ECO;
-    case 'Educación':
-      return Career.EDU;
-    case 'Enfermería':
-      return Career.ENF;
-    case 'Estomatología':
-      return Career.EST;
-    case 'Filosofía':
-      return Career.FIL;
-    case 'Gastronomía y Artes Culinarias':
-      return Career.GAS;
-    case 'Gestión Financiera y Auditoría':
-      return Career.GFA;
-    case 'Hospitalidad y Turismo':
-      return Career.HOT;
-    case 'Ingeniería Ambiental':
-      return Career.AMB;
-    case 'Ingeniería de Ciencias de la Computación':
-      return Career.ICC;
-    case 'Ingeniería Eléctrica':
-      return Career.IEL;
-    case 'Ingeniería Industrial y de Sistemas':
-      return Career.IIS;
-    case 'Ingeniería Mecánica':
-      return Career.IME;
-    case 'Ingeniería Mecatrónica':
-      return Career.IMA;
-    case 'Ingeniería Telemática':
-      return Career.ITT;
-    case 'Medicina':
-      return Career.MED;
-    case 'Marketing':
-      return Career.MKT;
-    case 'Nutrición y Dietética':
-      return Career.NDI;
-    case 'Psicología':
-      return Career.PSI;
-    case 'Terapia Física':
-      return Career.TER;
-    case 'Trabajo Social':
-      return Career.SOC;
-    default:
-      return Career.COM;
-  }
-}
+	switch (name) {
+		case 'Arquitectura':
+			return Career.ARQ;
+		case 'Comunicación Social':
+			return Career.COM;
+		case 'Dirección Empresarial':
+			return Career.DIR;
+		case 'Derecho':
+			return Career.DER;
+		case 'Diseño e Interiorismo':
+			return Career.DIN;
+		case 'Economía':
+			return Career.ECO;
+		case 'Educación':
+			return Career.EDU;
+		case 'Enfermería':
+			return Career.ENF;
+		case 'Estomatología':
+			return Career.EST;
+		case 'Filosofía':
+			return Career.FIL;
+		case 'Gastronomía y Artes Culinarias':
+			return Career.GAS;
+		case 'Gestión Financiera y Auditoría':
+			return Career.GFA;
+		case 'Hospitalidad y Turismo':
+			return Career.HOT;
+		case 'Ingeniería Ambiental':
+			return Career.AMB;
+		case 'Ingeniería de Ciencias de la Computación':
+			return Career.ICC;
+		case 'Ingeniería Eléctrica':
+			return Career.IEL;
+		case 'Ingeniería Industrial y de Sistemas':
+			return Career.IIS;
+		case 'Ingeniería Mecánica':
+			return Career.IME;
+		case 'Ingeniería Mecatrónica':
+			return Career.IMA;
+		case 'Ingeniería Telemática':
+			return Career.ITT;
+		case 'Medicina':
+			return Career.MED;
+		case 'Marketing':
+			return Career.MKT;
+		case 'Nutrición y Dietética':
+			return Career.NDI;
+		case 'Psicología':
+			return Career.PSI;
+		case 'Terapia Física':
+			return Career.TER;
+		case 'Trabajo Social':
+			return Career.SOC;
+		default:
+			return Career.COM;
+	}
+};
 
-export const getClubByCareer = (career: Career): StudentGroupsEnumCSTI | null=> {
-  switch (career) {
-    case Career.ICC:
-      return StudentGroupsEnumCSTI.CICC_CSTI;
-    case Career.DER:
-      return StudentGroupsEnumCSTI.ADER_CSTI;
-    case Career.MED:
-      return StudentGroupsEnumCSTI.ADEMED_CSTI;
-    case Career.ITT:
-      return StudentGroupsEnumCSTI.CEIT_CSTI;
-    default:
-      return null
-  }
-}
-
-
+export const getClubByCareer = (career: Career): StudentGroupsEnumCSTI | null => {
+	switch (career) {
+		case Career.ICC:
+			return StudentGroupsEnumCSTI.CICC_CSTI;
+		case Career.DER:
+			return StudentGroupsEnumCSTI.ADER_CSTI;
+		case Career.MED:
+			return StudentGroupsEnumCSTI.ADEMED_CSTI;
+		case Career.ITT:
+			return StudentGroupsEnumCSTI.CEIT_CSTI;
+		default:
+			return null;
+	}
+};

@@ -23,7 +23,7 @@ export type BulletPoint = {
 	description: string;
 };
 
-export type MainBulletPointsGroup = {
+export type BulletPointsGroup = {
 	title?: string;
 	bulletPoints: BulletPoint[];
 };
@@ -148,4 +148,14 @@ export type PaperResponse = {
 	pubDate?: string;
 	'media:content'?: { '@_url': string };
 	image?: string;
+};
+
+export type AccordionItemData = {
+	title: string;
+	content: string;
+};
+
+export type AccordionData = {
+	title: string;
+	items: AccordionItemData[];
 };

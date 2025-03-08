@@ -1,10 +1,9 @@
 ---
 import BulletPoint from '@components/BulletPoints/BulletPoint/BulletPoint.astro';
-
-import type { MainBulletPointsGroup } from '@data/_static/bulletPoints/mainBullePoints.data';
+import type { BulletPointsGroup } from '@data/_types/types';
 
 interface Props {
-	bulletPoints: MainBulletPointsGroup[];
+	bulletPoints: BulletPointsGroup[];
 }
 
 const { bulletPoints } = Astro.props;

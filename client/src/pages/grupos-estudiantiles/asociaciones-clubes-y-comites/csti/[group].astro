@@ -16,7 +16,7 @@ import {
 	studentsGroupsDataCSTI,
 } from '@data/_centralized/groups/studentsGroups.data';
 import { SocialMediaEnum } from '@data/_centralized/groups/studentsGroups.data';
-import { StudentsGroupsImages } from '@data/_centralized/images.data';
+import { StudentsGroupsImagesCSTI } from '@data/_centralized/images.data';
 import { Routes } from '@data/_centralized/routes.data';
 import { getPostsByClub } from '@data/_fetch/posts.fetch';
 
@@ -49,13 +49,22 @@ if (error) {
         <div class="col-lg-8">
           <div class="news-details">
             <div class="news-simple-card">
+              <DynamicCarousel
+                carouselImages={[
+                  "/templates/academic/academic-1.jpg",
+                  "/templates/academic/academic-2.jpg",
+                  "/templates/academic/academic-3.jpg",
+                  "/templates/academic/academic-4.jpg",
+                ]}
+              />
+
               <div class="text-center">
                 <h2>
                   {studentGroupData.title}
                 </h2>
                 <Image
-                  src={StudentsGroupsImages[
-                    studentGroupData.initials as keyof typeof StudentsGroupsImages
+                  src={StudentsGroupsImagesCSTI[
+                    studentGroupData.initials as keyof typeof StudentsGroupsImagesCSTI
                   ]}
                   alt={studentGroupData.title}
                   width={450}
@@ -113,17 +122,6 @@ if (error) {
                 </div>
               )
             }
-
-            <DynamicCarousel
-              carouselImages={[
-                "/templates/academic/academic-1.jpg",
-                "/templates/academic/academic-2.jpg",
-                "/templates/academic/academic-3.jpg",
-                "/templates/academic/academic-4.jpg",
-              ]}
-            />
-
-            <br />
 
             <SocialMediaList
               facebook={studentGroupData.socialMedia?.[SocialMediaEnum.FACEBOOK]

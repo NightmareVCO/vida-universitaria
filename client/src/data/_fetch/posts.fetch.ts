@@ -81,11 +81,13 @@ export const getPostsByCampusAndClub = async ({
 	apiUrl,
 	campus,
 	club,
-}: { apiUrl: string; campus: Campus, club? : StudentGroupsEnumCSTI }): Promise<[Activity[] | null, Error | null]> => {
+}: { apiUrl: string; campus: Campus; club?: StudentGroupsEnumCSTI }): Promise<
+	[Activity[] | null, Error | null]
+> => {
 	try {
 		const postsUrl = new URL(`${apiUrl}/posts`);
 		const categoriesUrl = new URL(`${apiUrl}/categories`);
-	
+
 		const [postsResponse, categoriesResponse] = await Promise.all([
 			fetch(postsUrl.toString()),
 			fetch(categoriesUrl.toString()),
@@ -119,7 +121,7 @@ export const getPostsByCampusAndClub = async ({
 		const activities = await Promise.all(activitiesPromises);
 		if (!activities) throw new Error('Activities not found');
 
-		const filteredActivities = activities.filter((activity) => 
+		const filteredActivities = activities.filter((activity) =>
 			activity.academicGroup.includes(campus),
 		);
 		if (!filteredActivities) throw new Error('Activities not found');
@@ -127,7 +129,7 @@ export const getPostsByCampusAndClub = async ({
 		const clubName = club?.split('-').join(' - ') ?? '';
 		let filteredActivitiesByClub: Activity[] = [];
 		if (club) {
-				filteredActivitiesByClub = filteredActivities.filter((activity) =>
+			filteredActivitiesByClub = filteredActivities.filter((activity) =>
 				activity.academicGroup.includes(clubName),
 			);
 		}

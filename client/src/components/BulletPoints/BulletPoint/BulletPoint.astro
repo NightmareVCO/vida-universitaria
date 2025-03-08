@@ -1,17 +1,19 @@
 ---
 import BulletPointElement from '@components/BulletPoints/BulletPoint/components/BulletPointElement/BulletPointElement.astro';
-
-import type { MainBulletPointsGroup } from '@data/_static/bulletPoints/mainBullePoints.data';
+import type { BulletPointsGroup } from '@data/_types/types';
 
 interface Props {
-	bulletPointGroup: MainBulletPointsGroup;
+	bulletPointGroup: BulletPointsGroup;
 }
 
 const { bulletPointGroup } = Astro.props;
+const firstBulletPoint = bulletPointGroup.bulletPoints[0];
+const isTextLarge = firstBulletPoint.description.length > 50;
+const className = isTextLarge ? 'col-lg-12 col-md-6' : 'col-lg-6 col-md-6';
 ---
 
-<div class="col-lg-6 col-md-6">
-  <h4>{bulletPointGroup?.title}</h4>
+<div class={className}>
+  <h5 class="text-center text-lg-start">{bulletPointGroup?.title}</h5>
   <ul>
     {
       bulletPointGroup.bulletPoints &&

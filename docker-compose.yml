@@ -1,16 +1,15 @@
+
 services:
   db:
-    container_name: db
+    container_name: vida-universitaria-db
     image: mariadb
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password1
       MYSQL_DATABASE: wordpress
   wordpress:
-    container_name: wordpress
-    build:
-      context: ./wordpress
-      dockerfile: Dockerfile
+    container_name: vida-universitaria-wordpress
+    image: nightmarevco/vida-universitaria:wordpress
     volumes:
       - ./wordpress:/var/www/html
     ports:
@@ -18,10 +17,8 @@ services:
     depends_on:
       - db
   astro:
-    container_name: astro
-    build:
-      context: ./client
-      dockerfile: dockerfile
+    container_name: vida-universitaria-astro
+    image: nightmarevco/vida-universitaria:astro
     env_file:
       - ./client/.env
     ports:
