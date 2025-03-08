@@ -1,0 +1,33 @@
+---
+import BulletPointElement from '@components/BulletPoints/BulletPoint/components/BulletPointElement/BulletPointElement.astro';
+import type { BulletPointsGroup } from '@data/_types/types';
+
+interface Props {
+	bulletPointGroup: BulletPointsGroup;
+}
+
+const { bulletPointGroup } = Astro.props;
+const firstBulletPoint = bulletPointGroup.bulletPoints[0];
+const isTextLarge = firstBulletPoint.description.length > 50;
+const className = isTextLarge ? 'col-lg-12 col-md-6' : 'col-lg-6 col-md-6';
+---
+
+<div class={className}>
+  <h5 class="text-center text-lg-start">{bulletPointGroup?.title}</h5>
+  <ul>
+    {
+      bulletPointGroup.bulletPoints &&
+        bulletPointGroup.bulletPoints.map((bulletPoint) => (
+          <BulletPointElement bulletPoint={bulletPoint.description} />
+        ))
+    }
+    {
+      !bulletPointGroup.bulletPoints && (
+        <li>
+          <i class="fa-solid fa-check" />
+          <p>No hay información disponible</p>
+        </li>
+      )
+    }
+  </ul>
+</div>

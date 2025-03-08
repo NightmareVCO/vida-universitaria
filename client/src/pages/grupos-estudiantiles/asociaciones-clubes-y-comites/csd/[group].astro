@@ -1,0 +1,145 @@
+---
+export const prerender = false;
+
+import { Image } from 'astro:assets';
+import { API_URL } from 'astro:env/client';
+
+import Layout from '@layouts/Layout.astro';
+
+import AsideNav from '@components/AsideNav/AsideNav.astro';
+import Banner from '@components/Banner/Banner.astro';
+import SocialMediaList from '@components/SocialMedia/SocialMediaList';
+
+import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
+import {
+	type StudentGroupsEnumCSD,
+	studentsGroupsDataCSD,
+} from '@data/_centralized/groups/studentsGroups.data';
+import { SocialMediaEnum } from '@data/_centralized/groups/studentsGroups.data';
+import { StudentsGroupsImagesCSTI } from '@data/_centralized/images.data';
+import { Routes } from '@data/_centralized/routes.data';
+import { getPostsByClub } from '@data/_fetch/posts.fetch';
+
+const { group } = Astro.params;
+
+const studentGroupData = studentsGroupsDataCSD[group?.toUpperCase() as StudentGroupsEnumCSD];
+
+const INSCRIPTION_LABEL = 'Llenar solicitud de ingreso';
+
+const [studentGroupPosts, error] = await getPostsByClub({
+	apiUrl: API_URL,
+	club: studentGroupData.label,
+});
+if (error) {
+	console.error(error);
+}
+---
+
+<Layout title={studentGroupData.title}>
+  <Banner
+    title={studentGroupData.title}
+    path={studentGroupData.label}
+    origin="Grupos Estudiantiles / Asociaciones, Clubes y Comités"
+    originLink={Routes.GRUPOS_ESTUDIANTILES_ASOC_CLUB_COM_CSD}
+  />
+
+  <div class="news-details-area pt-5 pb-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="news-details">
+            <div class="news-simple-card">
+              <DynamicCarousel
+                carouselImages={[
+                  "/templates/academic/academic-1.jpg",
+                  "/templates/academic/academic-2.jpg",
+                  "/templates/academic/academic-3.jpg",
+                  "/templates/academic/academic-4.jpg",
+                ]}
+              />
+
+              <div class="text-center">
+                <h2>
+                  {studentGroupData.title}
+                </h2>
+                <Image
+                  src={StudentsGroupsImagesCSTI[
+                    studentGroupData.initials as keyof typeof StudentsGroupsImagesCSTI
+                  ]}
+                  alt={studentGroupData.title}
+                  width={450}
+                  height={450}
+                />
+              </div>
+              <p>
+                {studentGroupData.description}
+              </p>
+            </div>
+            <div class="theory">
+              {
+                studentGroupData.mission && (
+                  <div class="theory-box">
+                    <h4>Misión</h4>
+                    <p>{studentGroupData.mission}</p>
+                  </div>
+                )
+              }
+              {
+                studentGroupData.vision && (
+                  <div class="theory-box">
+                    <h4>Visión</h4>
+                    <p>{studentGroupData.vision}</p>
+                  </div>
+                )
+              }
+            </div>
+            <!-- <div class="blog-img-and-content">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <img src="assets/images/blog/details/img-1.jpg" alt="Image" />
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <img src="assets/images/blog/details/img-2.jpg" alt="Image" />
+                </div>
+              </div>
+              <p>
+                Fusce auctor odio et mauris congue, nec convallis urna bibendum.
+                Duis sed tortor facilisis, tincidunt libero at, auctor velit.
+                Vivamus gravida ultrices ex nec volutpat.
+              </p>
+            </div> -->
+
+            {
+              studentGroupData.formLink && (
+                <div class="text-center pb-4">
+                  <a
+                    target="_blank"
+                    rel="noopener"
+                    href={studentGroupData.formLink}
+                    class="default-btn-one"
+                  >
+                    <i class="flaticon-bookmark" />
+                    {INSCRIPTION_LABEL}
+                  </a>
+                </div>
+              )
+            }
+
+            <SocialMediaList
+              facebook={studentGroupData.socialMedia?.[SocialMediaEnum.FACEBOOK]
+                ?.link}
+              twitter={studentGroupData.socialMedia?.[SocialMediaEnum.TWITTER]
+                ?.link}
+              instagram={studentGroupData.socialMedia?.[
+                SocialMediaEnum.INSTAGRAM
+              ]?.link}
+              linkedin={studentGroupData.socialMedia?.[SocialMediaEnum.LINKEDIN]
+                ?.link}
+            />
+          </div>
+        </div>
+        <AsideNav activities={studentGroupPosts ?? []} />
+      </div>
+    </div>
+  </div>
+</Layout>

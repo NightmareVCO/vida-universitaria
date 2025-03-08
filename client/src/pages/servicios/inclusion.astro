@@ -1,0 +1,107 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+import Banner from '@components/Banner/Banner.astro';
+import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
+
+import AsideNavLinks from '@components/AsideNav/AsideNavLinks';
+import BulletPointRender from '@components/BulletPoints/BulletPointRender/BulletPointRender.astro';
+import CampusInfo from '@components/CampusInfo/CampusInfo.astro';
+import { Routes } from '@data/_centralized/routes.data';
+import { inclusiveServicesValuesBulletPoints } from '@data/_static/bulletPoints/servicesBulletPoints.data';
+---
+
+<Layout title="Servicios Estudiantiles - Inclusión | PUCMM">
+  <Banner
+    title="Servicios Estudiantiles | Inclusión"
+    path="Servicios Estudiantiles / Inclusión"
+    origin="Inicio"
+    originLink={Routes.HOME}
+  />
+
+  <div class="news-details-area pt-5 pb-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="news-details">
+            <div class="news-simple-card">
+              <DynamicCarousel
+                carouselImages={[
+                  "/templates/academic/academic-1.jpg",
+                  "/templates/academic/academic-2.jpg",
+                  "/templates/academic/academic-3.jpg",
+                  "/templates/academic/academic-4.jpg",
+                ]}
+              />
+
+              <div class="text-center">
+                <h2>Departamento de Inclusión</h2>
+              </div>
+              <p>
+                La PUCMM, como institución católica y de servicio a la sociedad,
+                está abierta a todas las personas, por lo que en su proceso de
+                admisión asegura la inclusión educativa de las personas con
+                discapacidad.
+              </p>
+
+              <h3>¿Tienes alguna de estas condiciones?</h3>
+
+              <div class="campus-content">
+                <BulletPointRender
+                  bulletPoints={inclusiveServicesValuesBulletPoints}
+                />
+              </div>
+
+              <iframe
+                width="100%"
+                height="500px"
+                src="https://www.youtube.com/embed/IebmtrLejic?si=U-fpoZbtVoT-_yfq"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+
+              <div class="my-4">
+                <h3>Experiencias de nuestros estudiantes</h3>
+
+                <p>
+                  Escucha como nuestros estudiantes viven la inclusión y son
+                  capaces de superar cualquier obstáculo.
+                </p>
+                <div
+                  class="d-flex justify-content-between flex-wrap align-items-center"
+                >
+                  <iframe
+                    width="49%"
+                    height="315px"
+                    src="https://www.youtube.com/embed/jsq7HoQr6Fc?si=WTWmMIMu0GEZ7Zef"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+
+                  <iframe
+                    width="49%"
+                    height="315px"
+                    src="https://www.youtube.com/embed/uo8cUH8RgZ8?si=MGBXjVrmZoIg1DFo"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+
+              <CampusInfo />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <AsideNavLinks />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

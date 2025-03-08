@@ -1,0 +1,12 @@
+---
+interface Props {
+	bulletPoint: string;
+}
+
+const { bulletPoint } = Astro.props;
+---
+
+<li class="text-center text-lg-start">
+  <i class="fa-solid fa-check"></i>
+  <p>{bulletPoint}</p>
+</li>

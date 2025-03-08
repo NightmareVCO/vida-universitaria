@@ -1,0 +1,22 @@
+---
+import MainCardRender from '@components/Cards/Main/MainCardRender/MainCardRender.astro';
+import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
+import { studentGalleryImagesArray } from '@data/_centralized/images.data';
+
+import mainCardsData from '@data/_static/cards/mainCard.data';
+---
+
+<section class="container">
+  <div class="section-title">
+    <span>PUCMM</span>
+    <h2>Vida Estudiantil</h2>
+    <p>
+      Bienvenido a la vida Universitaria de la Pontificia Universidad Católica
+      Madre y Maestra (PUCMM). Aquí encontrarás información sobre los grupos
+      estudiantiles, eventos, noticias y mucho más.
+    </p>
+  </div>
+  <MainCardRender mainCardsData={mainCardsData} />
+
+  <DynamicCarousel carouselImages={studentGalleryImagesArray} isFullWidth />
+</section>

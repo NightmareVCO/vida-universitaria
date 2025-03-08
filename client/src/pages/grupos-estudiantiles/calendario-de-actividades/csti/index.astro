@@ -1,0 +1,33 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+import Banner from '@components/Banner/Banner.astro';
+import SwitchCampus from '@components/Buttons/SwitchCampus/SwitchCampus.astro';
+import SwitchCareer from '@components/Buttons/SwitchCareer/SwitchCareer';
+import EventSection from '@components/Sections/EventSection/EventSection';
+import { Routes } from '@data/_centralized/routes.data';
+
+import { API_URL } from 'astro:env/client';
+---
+
+<Layout title="Inicio | Vida Universitaria">
+  <Banner
+    title="Calendario de Actividades - Campus Santiago"
+    path="Calendario de Actividades - CSTI"
+    origin="Grupos Estudiantiles"
+    originLink={Routes.GRUPOS_ESTUDIANTILES}
+  />
+
+  <section class="educationist-area body-color pb-70">
+    <div class="d-flex flex-column flex-lg-row justify-content-between">
+      <SwitchCampus
+        CSTICampusPath={Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES_CSTI}
+        CSDCampusPath={Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES_CSD}
+        inactiveCampus="CSD"
+      />
+      <SwitchCareer client:only />
+    </div>
+
+    <EventSection campus="CSTI" apiUrl={API_URL} client:only />
+  </section>
+</Layout>

@@ -1,0 +1,16 @@
+---
+import CarouselImageItem from '../carouselImageItem/CarouselImageItem.astro';
+
+interface Props {
+	carouselImages: string[];
+	isFullWidth?: boolean;
+}
+
+const { carouselImages, isFullWidth } = Astro.props;
+---
+
+{
+	carouselImages.map((image, index) => (
+		<CarouselImageItem image={image} index={index} isFullWidth={isFullWidth} />
+	))
+}

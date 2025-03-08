@@ -1,0 +1,9 @@
+---
+interface Props {
+	index: number;
+}
+
+const { index } = Astro.props;
+---
+
+<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to={index} class={index === 0 ? 'active' : ''} aria-label={`Slide ${index + 1}`}></button>

@@ -1,0 +1,72 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+import Banner from '@components/Banner/Banner.astro';
+import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
+
+import AccordionRender from '@components/Accordion/AccordionRender/AccordionRender.astro';
+import AsideNavLinks from '@components/AsideNav/AsideNavLinks';
+import CampusInfo from '@components/CampusInfo/CampusInfo.astro';
+import { artsGroupsHighlighImagesArray } from '@data/_centralized/images.data';
+import { artsAndCultureAccordionData } from '@data/_static/accordions/artsAndCultureAccordion.data';
+---
+
+<Layout title="Departamento de Arte y Cultura | PUCMM">
+  <Banner
+    title="Departamento de Arte y Cultura"
+    path="Departamento de Arte y Cultura"
+    origin="Inicio"
+    originLink="/"
+  />
+
+  <div class="news-details-area pt-5 pb-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="news-details">
+            <div class="news-simple-card">
+              <DynamicCarousel carouselImages={artsGroupsHighlighImagesArray} />
+
+              <div class="text-center">
+                <h2>Departamento de Arte y Cultura</h2>
+              </div>
+              <p>
+                El Departamento de Arte y Cultura es una dependencia del
+                Decanato de Estudiantes de la Pontificia Universidad Católica
+                Madre y Maestra. Fundado en 1968, cada semestre realiza
+                actividades dedicadas a la comunidad universitaria y al público:
+                espectáculos, talleres, seminarios, ferias, exposiciones y obras
+                de teatro, que permiten al estudiantado desarrollar su talento
+                mientras fortalece su creatividad, sus habilidades de liderazgo
+                y de trabajo en equipo.
+              </p>
+
+              <iframe
+                width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/tUpe4SCxgsI?si=78i_B56Z5mZGOEN-"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+
+              <div class="mt-5">
+                <p>
+                  En la actualidad cuenta con los siguientes grupos artísticos
+                  que son parte de la vida cultural de la universidad:
+                </p>
+              </div>
+              <AccordionRender accordionItems={artsAndCultureAccordionData} />
+
+              <CampusInfo />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <AsideNavLinks />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

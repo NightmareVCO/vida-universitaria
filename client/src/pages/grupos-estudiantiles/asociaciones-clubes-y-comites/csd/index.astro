@@ -1,0 +1,33 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+import Banner from '@components/Banner/Banner.astro';
+import SwitchCampus from '@components/Buttons/SwitchCampus/SwitchCampus.astro';
+import StudentGroupRender from '@components/Cards/StudentGroup/StudentGroupRender/StudentGroupRender';
+
+import SwitchFaculty from '@components/Buttons/SwitchFaculty/SwitchFaculty';
+import { Routes } from '@data/_centralized/routes.data';
+---
+
+<Layout
+  title="Asociaciones, Clubes y Comités - Campus Santo Domingo | Vida Universitaria"
+>
+  <Banner
+    title="Asociaciones, Clubes y Comités - CSD"
+    path="Asociaciones, Clubes y Comités"
+    origin="Grupos Estudiantiles"
+    originLink={Routes.GRUPOS_ESTUDIANTILES}
+  />
+
+  <div class="d-flex flex-column flex-lg-row justify-content-between">
+    <SwitchCampus
+      CSTICampusPath={Routes.GRUPOS_ESTUDIANTILES_ASOC_CLUB_COM_CSTI}
+      CSDCampusPath={Routes.GRUPOS_ESTUDIANTILES_ASOC_CLUB_COM_CSD}
+      inactiveCampus="CSTI"
+    />
+
+    <SwitchFaculty client:only />
+  </div>
+
+  <StudentGroupRender campus="CSD" client:only />
+</Layout>

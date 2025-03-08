@@ -1,0 +1,15 @@
+---
+import MainCard from '@components/Cards/Main/MainCard/MainCard.astro';
+
+import type { MainCardData } from '@data/_static/cards/mainCard.data';
+
+interface Props {
+	mainCardsData: MainCardData[];
+}
+
+const { mainCardsData } = Astro.props;
+---
+
+<div class="row justify-content-center">
+  {mainCardsData.map((card) => <MainCard card={card} />)}
+</div>

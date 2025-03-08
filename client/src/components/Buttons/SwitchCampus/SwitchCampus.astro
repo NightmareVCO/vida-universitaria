@@ -1,0 +1,28 @@
+---
+import type { Campus } from '@data/_types/types';
+
+interface Props {
+	CSTICampusPath: string;
+	CSDCampusPath: string;
+	inactiveCampus: Campus;
+}
+
+const { CSTICampusPath, CSDCampusPath, inactiveCampus } = Astro.props;
+
+const defaultClass = 'default-btn-one';
+const inactiveClass = 'default-btn-one main-color';
+
+const CSTICampusClass = inactiveCampus === 'CSTI' ? inactiveClass : defaultClass;
+const CSDCampusClass = inactiveCampus === 'CSD' ? inactiveClass : defaultClass;
+---
+
+<div class="container">
+  <div class="d-flex flex-wrap justify-content-center gap-4 py-5">
+    <a href={CSTICampusPath} class={CSTICampusClass} style="min-width: 277px;">
+      <i class="fa-solid fa-home"></i>Campus Santiago</a
+    >
+    <a href={CSDCampusPath} class={CSDCampusClass} style="min-width: 277px;">
+      <i class="fa-solid fa-home"></i>Campus Santo Domingo</a
+    >
+  </div>
+</div>

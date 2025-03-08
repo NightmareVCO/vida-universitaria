@@ -1,0 +1,96 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+import Banner from "@components/Banner/Banner.astro";
+import DynamicCarousel from "@components/DynamicCarousel/DynamicCarousel.astro";
+
+import AsideNavLinks from "@components/AsideNav/AsideNavLinks";
+import CampusInfo from "@components/CampusInfo/CampusInfo.astro";
+import { servicesSecurityImagesArray } from "@data/_centralized/images.data";
+import { Routes } from "@data/_centralized/routes.data";
+---
+
+<Layout title="Servicios Estudiantiles - Seguridad | PUCMM">
+  <Banner
+    title="Servicios Estudiantiles | Seguridad"
+    path="Servicios Estudiantiles / Seguridad"
+    origin="Inicio"
+    originLink="/"
+  />
+
+  <div class="news-details-area pt-5 pb-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="news-details">
+            <div class="news-simple-card">
+              <DynamicCarousel carouselImages={servicesSecurityImagesArray} />
+
+              <div class="text-center">
+                <h2>Departamento Seguridad</h2>
+              </div>
+
+              <p>
+                Para la PUCMM, la seguridad es un aspecto de gran importancia,
+                dado esto la institución cuenta con una amplia estructura de
+                seguridad conformada por dos unidades operativas: la Unidad de
+                Seguridad Industrial, Salud Ocupacional y Medio Ambiente y la
+                Unidad de Seguridad Física, estas unidades tienen como objetivo
+                la implementación de programas y estrategias dirigidos a la
+                protección de la integridad de las personas y de los bienes
+                materiales de la institución y de sus usuarios, así como también
+                la protección del medio ambiente.
+              </p>
+
+              <div class="d-flex justify-content-center mb-4">
+                <a
+                  href={Routes.FILE_1_SERVICIOS_SEGURIDAD}
+                  class="default-btn-one"
+                  >Política de Seguridad General, Salud Ocupacional y Medio
+                  Ambiente<i class="fa-solid fa-arrow-right"></i></a
+                >
+              </div>
+
+              <div class="my-4">
+                <h3>Videos Informativos en Casos de Emergencia</h3>
+
+                <p>
+                  A continuación, te presentamos una serie de videos
+                  informativos en casos de emergencia.
+                </p>
+                <div
+                  class="d-flex justify-content-between flex-wrap align-items-center"
+                >
+                  <iframe
+                    width="49%"
+                    height="315px"
+                    src="https://www.youtube.com/embed/eIAdZvMAPwg?si=k8otm5fIbUnnqSSd"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+
+                  <iframe
+                    width="49%"
+                    height="315px"
+                    src="https://www.youtube.com/embed/1r_z4XNwHRo?si=8Wpr903EtXx3jPqt"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+                </div>
+              </div>
+
+              <CampusInfo />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <AsideNavLinks />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

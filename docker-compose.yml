@@ -1,0 +1,40 @@
+
+services:
+  db:
+    container_name: vida-universitaria-db
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password1
+      MYSQL_DATABASE: wordpress
+  wordpress:
+    container_name: vida-universitaria-wordpress
+    image: nightmarevco/vida-universitaria:wordpress
+    volumes:
+      - ./wordpress:/var/www/html
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+  astro:
+    container_name: vida-universitaria-astro
+    image: nightmarevco/vida-universitaria:astro
+    env_file:
+      - ./client/.env
+    ports:
+      - "8000:4321"
+    environment:
+      - HOST=0.0.0.0
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    depends_on:
+      - wordpress
+
+volumes:
+  node_modules: {}

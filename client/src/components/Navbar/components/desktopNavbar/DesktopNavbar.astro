@@ -1,0 +1,32 @@
+---
+import { navigationData } from '@data/_static/navigation/nav.data';
+
+import { Image } from 'astro:assets';
+
+import NavbarMenuItems from './NavbarMenuItems';
+---
+
+<nav class="desktop-nav">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-md navbar-light">
+      <a class="navbar-brand" href="/">
+        <Image
+          src="/assets/images/logo.webp"
+          class="main-logo"
+          alt="logo"
+          width={200}
+          height={50}
+        />
+      </a>
+
+      <div
+        class="collapse navbar-collapse mean-menu"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mx-auto">
+          <NavbarMenuItems items={navigationData} />
+        </ul>
+      </div>
+    </nav>
+  </div>
+</nav>

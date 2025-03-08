@@ -1,0 +1,48 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+import Banner from '@components/Banner/Banner.astro';
+import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
+
+import AsideNavLinks from '@components/AsideNav/AsideNavLinks';
+import CampusInfo from '@components/CampusInfo/CampusInfo.astro';
+---
+
+<Layout title="Servicios Estudiantiles - Compromiso Universitarios | PUCMM">
+  <Banner
+    title="Servicios Estudiantiles | Compromiso Universitario"
+    path="Servicios Estudiantiles / Compromiso Universitario"
+    origin="Inicio"
+    originLink="/"
+  />
+
+  <div class="news-details-area pt-5 pb-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="news-details">
+            <div class="news-simple-card">
+              <DynamicCarousel
+                carouselImages={[
+                  "/templates/academic/academic-1.jpg",
+                  "/templates/academic/academic-2.jpg",
+                  "/templates/academic/academic-3.jpg",
+                  "/templates/academic/academic-4.jpg",
+                ]}
+              />
+
+              <div class="text-center">
+                <h2>Compromiso Universitario</h2>
+              </div>
+
+              <CampusInfo />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <AsideNavLinks />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

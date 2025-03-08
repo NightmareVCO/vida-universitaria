@@ -1,0 +1,18 @@
+---
+import AccordionItem from '@components/Accordion/AccordionItem/AccordionItem.astro';
+import type { AccordionData, AccordionItemData } from '@data/_types/types';
+
+interface Props {
+	accordionItems: AccordionData;
+}
+
+const { accordionItems } = Astro.props;
+---
+
+<div class="accordion mb-4" id="accordionExample">
+  {
+    accordionItems.items.map((item: AccordionItemData, index: number) => (
+      <AccordionItem item={item} index={index} />
+    ))
+  }
+</div>
