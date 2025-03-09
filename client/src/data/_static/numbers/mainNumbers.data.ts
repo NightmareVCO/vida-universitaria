@@ -3,7 +3,7 @@ import type { NumberData } from '@data/_types/types';
 export const mainNumbersData: NumberData[] = [
 	{
 		count: 30,
-		description: 'Grupos Académicos',
+		description: 'Grupos',
 		suffix: '+',
 	},
 	{

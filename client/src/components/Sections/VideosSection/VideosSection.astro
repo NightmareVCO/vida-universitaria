@@ -38,13 +38,15 @@ const MAX_LENGTH = 45;
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <Image
-                          src={video.image}
-                          alt={video.title}
-                          class="card-responsive-video"
-                          width="415"
-                          height="276"
-                        />
+                        <div class="card-responsive-video-container">
+                          <Image
+                            src={video.image}
+                            alt={video.title}
+                            class="card-responsive-video zoom-xl"
+                            width="415"
+                            height="276"
+                          />
+                        </div>
                       </a>
                       <a
                         class="popup-youtube play-btn"

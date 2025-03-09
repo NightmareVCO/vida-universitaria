@@ -1,8 +1,8 @@
 ---
-import type { NumberData } from '@data/_types/types';
+import type { NumberData } from "@data/_types/types";
 
 interface Props {
-	numberData: NumberData;
+  numberData: NumberData;
 }
 
 const { numberData } = Astro.props;
@@ -11,6 +11,7 @@ const { numberData } = Astro.props;
 <div class="col-lg-4 col-4">
   <div class="counter-card">
     <h2 class="text-center text-lg-start">
+      <span class="target">{numberData.suffix}</span>
       <span class="odometer odometer-auto-theme" data-count={numberData.count}>
         <span class="odometer-inside">
           <span class="odometer-digit">
@@ -35,7 +36,6 @@ const { numberData } = Astro.props;
           </span>
         </span>
       </span>
-      <span class="target">{numberData.suffix}</span>
     </h2>
     <p>{numberData.description}</p>
   </div>

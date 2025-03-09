@@ -1485,9 +1485,9 @@ Banner Area  Style
 .main-slider {
 	position: relative;
 
-	.main-slider {
-	 background-image: url(../images/main-hero.png);
-	}
+  .main-slider {
+    background-image: url(../images/main-hero.png);
+  }
 
 	.even-slider {
 		background-image: url(../images/banner-even.png);
@@ -1504,7 +1504,7 @@ Banner Area  Style
 		padding-bottom: 0px;
 		padding-top: 0px;
 		position: relative;
-		height: 600px;
+		height: 450px;
 	}
 
 	.swiper-wrapper {
@@ -1514,7 +1514,7 @@ Banner Area  Style
 	.swiper-btn-next {
 		position: absolute;
 		left: 8px;
-		top: 50%;
+		top: 45%;
 		width: 65px;
 		height: 65px;
 		line-height: 71px;
@@ -1523,7 +1523,7 @@ Banner Area  Style
 		text-align: center;
 		transition: all ease 0.5s;
 		border: 1px solid rgba(40, 58, 94, 0.15);
-		background-color: $white;
+
 
 		i {
 			color: $color_4;
@@ -1544,12 +1544,11 @@ Banner Area  Style
 		position: absolute;
 		right: 8px;
 		z-index: 2;
-		top: 50%;
+		top: 45%;
 		width: 65px;
 		height: 65px;
 		line-height: 71px;
 		z-index: 2;
-		background: $white;
 		border-radius: 50%;
 		text-align: center;
 		transition: all ease 0.5s;
@@ -1723,6 +1722,10 @@ Campus Area Style
 					top: 4px;
 					left: 0;
 					color: $color_1;
+				}
+
+				p {
+					text-align: start;
 				}
 
 				p:last-child {

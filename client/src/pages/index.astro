@@ -1,20 +1,20 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Layout from "@layouts/Layout.astro";
 
-import Hero from '@components/Hero/Hero.astro';
-import DataSection from '@components/Sections/DataSection/DataSection.astro';
-import EventSection from '@components/Sections/EventSection/EventSection';
-import MainSection from '@components/Sections/MainSection/MainSection.astro';
-import PaperSection from '@components/Sections/PaperSection/PaperSection.astro';
-import VideosSection from '@components/Sections/VideosSection/VideosSection.astro';
+import Hero from "@components/Hero/Hero.astro";
+import DataSection from "@components/Sections/DataSection/DataSection.astro";
+import EventSection from "@components/Sections/EventSection/EventSection";
+import MainSection from "@components/Sections/MainSection/MainSection.astro";
+import PaperSection from "@components/Sections/PaperSection/PaperSection.astro";
+import VideosSection from "@components/Sections/VideosSection/VideosSection.astro";
 
-import { API_URL } from 'astro:env/client';
+import { API_URL } from "astro:env/client";
 ---
 
 <Layout title="Inicio | PUCMM">
   <Hero />
 
-  <section class="educationist-area pt-100 pb-70">
+  <section class="educationist-area pb-70">
     <MainSection />
     <div class="pt-5">
       <EventSection campus="CSTI" isSection apiUrl={API_URL} client:only />
