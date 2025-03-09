@@ -1,30 +1,37 @@
-import { Faculty } from '@data/_centralized/faculties.data';
+import { Faculty } from "@data/_centralized/faculties.data";
 
 export default function SwitchFaculty() {
-	const faculty = new URLSearchParams(window.location.search).get('faculty');
+	const faculty = new URLSearchParams(window.location.search).get("faculty");
 	const facultyOptions = Object.values(Faculty);
 
 	const handleFacultyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
 		const faculty = e.target.value;
 		const url = new URL(window.location.href);
-		url.searchParams.set('faculty', faculty);
-		window.history.pushState({}, '', url);
+		url.searchParams.set("faculty", faculty);
+		window.history.pushState({}, "", url);
 		window.location.reload();
 	};
 
 	return (
 		<div className="container">
-			<div className="d-flex justify-content-center gap-4 py-5">
-				<select className="default-btn-one" onChange={handleFacultyChange}>
+			<div className="d-flex justify-content-center">
+				<select
+					className="default-btn-one"
+					style={{ width: "277px" }}
+					onChange={handleFacultyChange}
+				>
 					<option value="" selected>
-						Selecciona una facultad
+						Facultad
 					</option>
 					{faculty
 						? facultyOptions.map((faculty) => (
 								<option
 									key={faculty}
 									value={faculty}
-									selected={faculty === new URLSearchParams(window.location.search).get('faculty')}
+									selected={
+										faculty ===
+										new URLSearchParams(window.location.search).get("faculty")
+									}
 								>
 									{faculty}
 								</option>

@@ -3,6 +3,12 @@
 /*-- All Color --*/
 /* Mobile and iPad Navbar */
 
+@media (max-width: 1023px){
+  .mt-sm-25 {
+    margin-top: 25px;
+  }
+}
+
 @media (max-width: 766px) {
   .card-responsive-video {
     width: 516px;

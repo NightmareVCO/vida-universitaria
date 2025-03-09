@@ -1,13 +1,14 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Layout from "@layouts/Layout.astro";
 
-import Banner from '@components/Banner/Banner.astro';
-import SwitchCampus from '@components/Buttons/SwitchCampus/SwitchCampus.astro';
-import SwitchCareer from '@components/Buttons/SwitchCareer/SwitchCareer';
-import EventSection from '@components/Sections/EventSection/EventSection';
-import { Routes } from '@data/_centralized/routes.data';
+import Banner from "@components/Banner/Banner.astro";
+import SwitchCampus from "@components/Buttons/SwitchCampus/SwitchCampus.astro";
+import SwitchCareer from "@components/Buttons/SwitchCareer/SwitchCareer";
+import EventSection from "@components/Sections/EventSection/EventSection";
+import { Routes } from "@data/_centralized/routes.data";
 
-import { API_URL } from 'astro:env/client';
+import { API_URL } from "astro:env/client";
+import { CampusEnum } from "@data/_types/types";
 ---
 
 <Layout title="Inicio | Vida Universitaria">
@@ -23,11 +24,11 @@ import { API_URL } from 'astro:env/client';
       <SwitchCampus
         CSTICampusPath={Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES_CSTI}
         CSDCampusPath={Routes.GRUPOS_ESTUDIANTILES_CALENDARIO_ACTIVIDADES_CSD}
-        inactiveCampus="CSD"
+        inactiveCampus={CampusEnum.CSD}
       />
       <SwitchCareer client:only />
     </div>
 
-    <EventSection campus="CSTI" apiUrl={API_URL} client:only />
+    <EventSection campus={CampusEnum.CSTI} apiUrl={API_URL} client:only />
   </section>
 </Layout>

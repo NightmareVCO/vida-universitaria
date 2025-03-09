@@ -1,21 +1,21 @@
 ---
-import Layout from '@layouts/Layout.astro';
+import Layout from "@layouts/Layout.astro";
 
-import Banner from '@components/Banner/Banner.astro';
-import DynamicCarousel from '@components/DynamicCarousel/DynamicCarousel.astro';
+import Banner from "@components/Banner/Banner.astro";
+import DynamicCarousel from "@components/DynamicCarousel/DynamicCarousel.astro";
 
-import AsideNavLinks from '@components/AsideNav/AsideNavLinks';
-import BulletPointRender from '@components/BulletPoints/BulletPointRender/BulletPointRender.astro';
-import CampusInfo from '@components/CampusInfo/CampusInfo.astro';
-import Personal from '@components/Personal/Personal.astro';
+import AsideNavLinks from "@components/AsideNav/AsideNavLinks";
+import BulletPointRender from "@components/BulletPoints/BulletPointRender/BulletPointRender.astro";
+import CampusInfo from "@components/CampusInfo/CampusInfo.astro";
+import Personal from "@components/Personal/Personal.astro";
 import {
-	serviceHealthPersonalCSTIImagesArray,
-	servicesHealthImagesArray,
-} from '@data/_centralized/images.data';
+  serviceHealthPersonalCSTIImagesArray,
+  servicesHealthImagesArray,
+} from "@data/_centralized/images.data";
 import {
-	healthServicesBulletPoints,
-	healthServicesValuesBulletPoints,
-} from '@data/_static/bulletPoints/servicesBulletPoints.data';
+  healthServicesBulletPoints,
+  healthServicesValuesBulletPoints,
+} from "@data/_static/bulletPoints/servicesBulletPoints.data";
 ---
 
 <Layout title="Servicios Estudiantiles - Salud | PUCMM">
@@ -35,7 +35,7 @@ import {
               <DynamicCarousel carouselImages={servicesHealthImagesArray} />
 
               <div class="text-center">
-                <h2>Departamento de Servicios de Salud</h2>
+                <h2>Departamento de Salud</h2>
               </div>
               <p>
                 El Departamento de Salud de la PUCMM ofrece servicios de

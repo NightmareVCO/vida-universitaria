@@ -9,6 +9,7 @@ import PaperSection from "@components/Sections/PaperSection/PaperSection.astro";
 import VideosSection from "@components/Sections/VideosSection/VideosSection.astro";
 
 import { API_URL } from "astro:env/client";
+import { CampusEnum } from "@data/_types/types";
 ---
 
 <Layout title="Inicio | PUCMM">
@@ -17,7 +18,12 @@ import { API_URL } from "astro:env/client";
   <section class="educationist-area pb-70">
     <MainSection />
     <div class="pt-5">
-      <EventSection campus="CSTI" isSection apiUrl={API_URL} client:only />
+      <EventSection
+        campus={CampusEnum.CSTI}
+        isSection
+        apiUrl={API_URL}
+        client:only
+      />
     </div>
     <DataSection />
     <PaperSection />

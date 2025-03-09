@@ -84,6 +84,11 @@ export type Hero = {
 
 export type Campus = 'CSTI' | 'CSD';
 
+export enum CampusEnum {
+	CSTI = 'CSTI',
+	CSD = 'CSD',
+}
+
 export type Post = {
 	id: number;
 	date: string;
